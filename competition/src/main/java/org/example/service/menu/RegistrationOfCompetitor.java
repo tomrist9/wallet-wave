@@ -25,6 +25,14 @@ public class RegistrationOfCompetitor implements RegistrationOfCompetitorInter {
         System.out.println("Enter their name and surnames");
         String name=scanner.nextLine();
         String surname=scanner.nextLine();
+        String name2=scanner.nextLine();
+        String surname2=scanner.nextLine();
+        String name3=scanner.nextLine();
+        String surname3=scanner.nextLine();
+        String name4=scanner.nextLine();
+        String surname4=scanner.nextLine();
+        String name5=scanner.nextLine();
+        String surname5=scanner.nextLine();
         System.out.println("Competitors have been succesfully saved");
     }
     public static void REGISTER() {

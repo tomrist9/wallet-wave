@@ -1,11 +1,8 @@
 package org.example;
 
-import java.util.Scanner;
-import org.example.service.menu.RegistrationOfCompetitor;
+import org.example.util.Menu;
 
-import static org.example.Menu.*;
-import org.example.service.menu.MenuLoginService;
-
+import static org.example.util.MenuUtil.loginApp;
 
 
 public class Main {
@@ -14,9 +11,9 @@ public class Main {
 
 
     public static void main(String[] args) {
-       Menu.loginApp();
+       loginApp();
 //
-//       Menu.showAllMenu();
+//
 
     }
 

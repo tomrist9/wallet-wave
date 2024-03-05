@@ -1,4 +1,4 @@
-package org.example;
+package org.example.bean;
 
 public class Config {
     private static boolean loggedIn;
