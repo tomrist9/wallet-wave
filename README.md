@@ -1,7 +1,7 @@
-### Spring Boot 3 CRUD Application
+# Spring Boot 3 CRUD Application
 Welcome to the Spring Boot 3 CRUD Application repository! This project is part of the Udemy course "Spring Boot 3: Learn Spring 6, Spring Core, Spring REST, Spring MVC, Spring Security, Thymeleaf, JPA, Hibernate, MySQL."
 
-# Course Overview
+## Course Overview
 This course provides a comprehensive guide to building Spring Boot applications with modern technologies and best practices. The course includes:
 
 Spring Boot 3: Core features, annotations, and Java configuration.
@@ -23,7 +23,7 @@ Spring Boot 3 Spring MVC Security: Implementing security with MVC
 For detailed explanations and guidance, refer to the Udemy course:
 Spring Boot 3: Learn Spring 6, Spring Core, Spring REST, Spring MVC, Spring Security, Thymeleaf, JPA, Hibernate, MySQL
 
-# Contributing
+## Contributing
 Feel free to contribute to this project by submitting issues or pull requests. Your feedback and improvements are welcome!
 
 # License
