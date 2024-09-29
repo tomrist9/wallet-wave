@@ -1,3 +1,4 @@
+<<<<<<<<< Temporary merge branch 1
 # Spring Boot 3 CRUD Application
 Welcome to the Spring Boot 3 CRUD Application repository! This project is part of the Udemy course "Spring Boot 3: Learn Spring 6, Spring Core, Spring REST, Spring MVC, Spring Security, Thymeleaf, JPA, Hibernate, MySQL."
 
@@ -28,3 +29,6 @@ Feel free to contribute to this project by submitting issues or pull requests. Y
 
 # License
 This project is licensed under the MIT License - see the LICENSE file for details.
+=========
+"# demo1" 
+>>>>>>>>> Temporary merge branch 2
