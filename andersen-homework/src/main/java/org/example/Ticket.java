@@ -4,6 +4,9 @@ import jakarta.validation.constraints.DecimalMax;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.Pattern;
 
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
 public class Ticket {
     @Pattern(regexp = "^[A-Za-z0-9]{1,4}$", message = "ID must be 1-4 alphanumeric characters.")
     private String id;
@@ -25,8 +28,11 @@ public class Ticket {
     @DecimalMax(value = "10.000", message = "Max backpack weight must be 10 kg or less with grams precision")
     private double maxBackpackWeight;
 
+    private LocalDateTime createdAt;
+    private BigDecimal price;
 
-    public Ticket(String id, String concertHall, String eventCode, long time, boolean isPromo, char studiumSector, double maxBackpackWeight) {
+
+    public Ticket(String id, String concertHall, String eventCode, long time, boolean isPromo, char studiumSector, double maxBackpackWeight, BigDecimal price) {
         this.id = id;
         this.concertHall = concertHall;
         this.eventCode = eventCode;
@@ -34,15 +40,32 @@ public class Ticket {
         this.isPromo = isPromo;
         this.studiumSector = studiumSector;
         this.maxBackpackWeight = maxBackpackWeight;
+        this.createdAt = LocalDateTime.now();
+        this.price = price;
     }
 
-    public Ticket(String concertHall, String eventCode, long time) {
+    public Ticket( String concertHall, String eventCode, long time,  BigDecimal price) {
+
         this.concertHall = concertHall;
         this.eventCode = eventCode;
         this.time = time;
+        this.createdAt = LocalDateTime.now();
+        this.price = price;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
     }
 
     public Ticket() {
-
+        this.createdAt = LocalDateTime.now();
     }
 }
