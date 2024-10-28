@@ -68,4 +68,19 @@ public class Ticket {
     public Ticket() {
         this.createdAt = LocalDateTime.now();
     }
+
+    @Override
+    public String toString() {
+        return "Ticket{" +
+                "id='" + id + '\'' +
+                ", concertHall='" + concertHall + '\'' +
+                ", eventCode='" + eventCode + '\'' +
+                ", time=" + time +
+                ", isPromo=" + isPromo +
+                ", studiumSector=" + studiumSector +
+                ", maxBackpackWeight=" + maxBackpackWeight +
+                ", createdAt=" + createdAt +
+                ", price=" + price +
+                '}';
+    }
 }
