@@ -40,3 +40,56 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+# Ignore ZIP files
+*.zip
+
+# Ignore images
+*.jpg
+*.jpeg
+*.png
+*.jfif
+*.webp
+*.heic
+
+# Ignore PDF and document files
+*.pdf
+*.doc
+*.docx
+
+# Ignore executable and installer files
+*.exe
+*.msi
+
+# Ignore audio and video files
+*.mp3
+*.mov
+*.mkv
+*.mp4
+
+# Ignore temporary and backup files
+*.tmp
+~$*
+
+# Ignore IntelliJ IDEA configuration files
+.idea/
+*.iml
+
+# Ignore folders
+ResumeDbAppJPASpring/
+lasresume/
+andersen_trainee/
+dev-spring-tool/
+task_management/
+user_management/
+turbox/
+zoom-cloud-meetings-5-12-3.exe
+zubi/
+
+# Ignore all RAR and tar files
+*.rar
+*.tgz
+
+# Ignore CSV and other data files
+*.csv
+*.v1
