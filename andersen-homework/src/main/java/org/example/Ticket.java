@@ -22,9 +22,7 @@ public class Ticket {
 
     private boolean isPromo;
 
-    @Pattern(regexp = "[ABC]", message = "Studium sector must be 'A', 'B', and 'C'")
-    private char studiumSector;
-
+    private StudiumSector studiumSector;
     @DecimalMax(value = "10.000", message = "Max backpack weight must be 10 kg or less with grams precision")
     private double maxBackpackWeight;
 
@@ -32,7 +30,7 @@ public class Ticket {
     private BigDecimal price;
 
 
-    public Ticket(String id, String concertHall, String eventCode, long time, boolean isPromo, char studiumSector, double maxBackpackWeight, BigDecimal price) {
+    public Ticket(String id, String concertHall, String eventCode, long time, boolean isPromo, StudiumSector studiumSector, double maxBackpackWeight, BigDecimal price) {
         this.id = id;
         this.concertHall = concertHall;
         this.eventCode = eventCode;
@@ -52,6 +50,9 @@ public class Ticket {
         this.createdAt = LocalDateTime.now();
         this.price = price;
     }
+    public Ticket() {
+        this.createdAt = LocalDateTime.now();
+    }
 
     public LocalDateTime getCreatedAt() {
         return createdAt;
@@ -65,9 +66,7 @@ public class Ticket {
         this.price = price;
     }
 
-    public Ticket() {
-        this.createdAt = LocalDateTime.now();
-    }
+
 
     @Override
     public String toString() {
