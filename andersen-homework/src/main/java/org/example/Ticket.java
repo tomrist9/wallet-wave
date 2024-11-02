@@ -62,8 +62,29 @@ public class Ticket {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
-        this.price = price;
+    public void setTime(long time) {
+        this.time = time;
+    }
+
+    public StudiumSector getStudiumSector() {
+        return studiumSector;
+    }
+
+    public void setStudiumSector(StudiumSector studiumSector) {
+        this.studiumSector = studiumSector;
+    }
+
+    public String getAllTicketValues() {
+        return "Ticket Details:\n" +
+                "ID: " + id + "\n" +
+                "Concert Hall: " + concertHall + "\n" +
+                "Event Code: " + eventCode + "\n" +
+                "Time: " + time + "\n" +
+                "Promo: " + (isPromo ? "Yes" : "No") + "\n" +
+                "Stadium Sector: " + studiumSector + "\n" +
+                "Max Backpack Weight: " + maxBackpackWeight + " kg\n" +
+                "Created At: " + (createdAt != null ? createdAt.toString() : "N/A") + "\n" +
+                "Price: " + (price != null ? price.toString() : "N/A");
     }
 
 
