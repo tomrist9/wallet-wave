@@ -84,22 +84,24 @@ public class Ticket {
                 "Stadium Sector: " + studiumSector + "\n" +
                 "Max Backpack Weight: " + maxBackpackWeight + " kg\n" +
                 "Created At: " + (createdAt != null ? createdAt.toString() : "N/A") + "\n" +
+                "Price: " + (price != null ? price.toString() : "N/A");
+
     }
 
 
 
-//    @Override
-//    public String toString() {
-//        return "Ticket{" +
-//                "id='" + id + '\'' +
-//                ", concertHall='" + concertHall + '\'' +
-//                ", eventCode='" + eventCode + '\'' +
-//                ", time=" + time +
-//                ", isPromo=" + isPromo +
-//                ", studiumSector=" + studiumSector +
-//                ", maxBackpackWeight=" + maxBackpackWeight +
-//                ", createdAt=" + createdAt +
-//                ", price=" + price +
-//                '}';
-//    }
+    @Override
+    public String toString() {
+        return "Ticket{" +
+                "id='" + id + '\'' +
+                ", concertHall='" + concertHall + '\'' +
+                ", eventCode='" + eventCode + '\'' +
+                ", time=" + time +
+                ", isPromo=" + isPromo +
+                ", studiumSector=" + studiumSector +
+                ", maxBackpackWeight=" + maxBackpackWeight +
+                ", createdAt=" + createdAt +
+                ", price=" + price +
+                '}';
+    }
 }
