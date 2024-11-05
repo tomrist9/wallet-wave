@@ -1,15 +1,16 @@
-package org.example;
+package org.example.model;
 
 import jakarta.validation.constraints.DecimalMax;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.Pattern;
+import org.example.enums.StudiumSector;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-public class Ticket {
-    @Pattern(regexp = "^[A-Za-z0-9]{1,4}$", message = "ID must be 1-4 alphanumeric characters.")
-    private String id;
+public class Ticket extends Entity {
+//    @Pattern(regexp = "^[A-Za-z0-9]{1,4}$", message = "ID must be 1-4 alphanumeric characters.")
+//    private String id;
 
     @Pattern(regexp = "^.{0,10}$", message = "concertHall must be 10 characters or fewer.")
     private String concertHall;
@@ -31,7 +32,7 @@ public class Ticket {
 
 
     public Ticket(String id, String concertHall, String eventCode, long time, boolean isPromo, StudiumSector studiumSector, double maxBackpackWeight, BigDecimal price) {
-        this.id = id;
+//        this.id = id;
         this.concertHall = concertHall;
         this.eventCode = eventCode;
         this.time = time;
@@ -77,7 +78,7 @@ public class Ticket {
 
     public String getAllTicketValues() {
         return "Ticket Details:\n" +
-                "ID: " + id + "\n" +
+                "ID: " + getId() + "\n" +
                 "Concert Hall: " + concertHall + "\n" +
                 "Event Code: " + eventCode + "\n" +
                 "Time: " + time + "\n" +
@@ -94,7 +95,7 @@ public class Ticket {
     @Override
     public String toString() {
         return "Ticket{" +
-                "id='" + id + '\'' +
+//                "id='" + id + '\'' +
                 ", concertHall='" + concertHall + '\'' +
                 ", eventCode='" + eventCode + '\'' +
                 ", time=" + time +

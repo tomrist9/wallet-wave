@@ -1,8 +1,8 @@
-package org.example;
+package org.example.model;
 
 import java.util.UUID;
 
-public abstract class Sales {
+public abstract class Entity {
     private UUID id;
 
     public UUID getId() {

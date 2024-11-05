@@ -1,6 +1,8 @@
 package org.example;
 
-import java.util.Arrays;
+import org.example.model.Admin;
+import org.example.model.Client;
+import org.example.model.Ticket;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,5 +12,11 @@ public class Main {
 
    Ticket ticket2=new Ticket();
    ticket2.share("555-50-09", "tteymurlu9@list.ru");
+
+   Client client=new Client();
+   client.printRole();
+
+   Admin admin=new Admin();
+   admin.printRole();
     }
 }
