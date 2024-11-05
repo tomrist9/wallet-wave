@@ -71,6 +71,7 @@ public class Ticket {
     }
 
     public void setStudiumSector(StudiumSector studiumSector) {
+
         this.studiumSector = studiumSector;
     }
 
@@ -104,4 +105,13 @@ public class Ticket {
                 ", price=" + price +
                 '}';
     }
+
+    public void share(String phoneNumber){
+        System.out.println("Ticket shared via phone to: " + phoneNumber);
+    }
+    public void share(String phoneNumber, String email){
+        System.out.println("Ticket shared via phone and email  to: " + phoneNumber + email);
+
+    }
+
 }

@@ -5,11 +5,10 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
 
-        int[] numbers = {1, 2, 3, 4, 5};
-        System.out.println("Numbers: " + Arrays.toString(numbers));
+   Ticket ticket1=new Ticket();
+   ticket1.share("555-50-09");
 
-
-
-        System.out.println("Hello world!");
+   Ticket ticket2=new Ticket();
+   ticket2.share("555-50-09", "tteymurlu9@list.ru");
     }
 }

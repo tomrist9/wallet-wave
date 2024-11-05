@@ -12,7 +12,7 @@ public abstract class Sales {
     public void setId(UUID id) {
         this.id = id;
     }
-    void print(){
+    public void print(){
         System.out.println("print content in console");
     }
 }
