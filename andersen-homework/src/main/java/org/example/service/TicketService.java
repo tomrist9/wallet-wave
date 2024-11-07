@@ -1,8 +1,7 @@
-package org.example;
+package org.example.service;
 
-import jakarta.validation.constraints.DecimalMax;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.Pattern;
+import org.example.enums.StudiumSector;
+import org.example.model.Ticket;
 
 import java.math.BigDecimal;
 

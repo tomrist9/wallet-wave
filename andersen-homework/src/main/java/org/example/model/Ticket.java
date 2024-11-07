@@ -7,6 +7,7 @@ import org.example.enums.StudiumSector;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 public class Ticket extends Entity {
 //    @Pattern(regexp = "^[A-Za-z0-9]{1,4}$", message = "ID must be 1-4 alphanumeric characters.")
@@ -89,8 +90,25 @@ public class Ticket extends Entity {
                 "Price: " + (price != null ? price.toString() : "N/A");
 
     }
+    public void share(String phoneNumber){
+        System.out.println("Ticket shared via phone to: " + phoneNumber);
+    }
+    public void share(String phoneNumber, String email){
+        System.out.println("Ticket shared via phone and email  to: " + phoneNumber + email);
 
+    }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Ticket ticket)) return false;
+        return time == ticket.time && isPromo == ticket.isPromo && Double.compare(ticket.maxBackpackWeight, maxBackpackWeight) == 0 && Objects.equals(concertHall, ticket.concertHall) && Objects.equals(eventCode, ticket.eventCode) && getStudiumSector() == ticket.getStudiumSector() && Objects.equals(getCreatedAt(), ticket.getCreatedAt()) && Objects.equals(getPrice(), ticket.getPrice());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(concertHall, eventCode, time, isPromo, getStudiumSector(), maxBackpackWeight, getCreatedAt(), getPrice());
+    }
 
     @Override
     public String toString() {
@@ -107,12 +125,6 @@ public class Ticket extends Entity {
                 '}';
     }
 
-    public void share(String phoneNumber){
-        System.out.println("Ticket shared via phone to: " + phoneNumber);
-    }
-    public void share(String phoneNumber, String email){
-        System.out.println("Ticket shared via phone and email  to: " + phoneNumber + email);
 
-    }
 
 }

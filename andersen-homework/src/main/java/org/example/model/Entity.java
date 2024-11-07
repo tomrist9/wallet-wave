@@ -1,8 +1,12 @@
 package org.example.model;
 
+import org.example.annotations.NullableWarning;
+
 import java.util.UUID;
 
 public abstract class Entity {
+
+    @NullableWarning
     private UUID id;
 
     public UUID getId() {
