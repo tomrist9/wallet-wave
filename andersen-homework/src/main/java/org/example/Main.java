@@ -11,7 +11,7 @@ public class Main {
    ticket1.share("555-50-09");
 
    Ticket ticket2=new Ticket();
-   ticket2.share("555-50-09", "tteymurlu9@list.ru");
+   ticket2.share("555-50-00", "tteymurlu9@list.ru");
 
    Client client=new Client();
    client.printRole();
