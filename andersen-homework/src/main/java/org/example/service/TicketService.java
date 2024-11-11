@@ -16,14 +16,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class TicketService {
-    public static void main(String[] args) {
-        try {
-            List<Ticket> tickets = loadTickets("tickets.json");
-            validateTickets(tickets);
-        } catch (IOException e) {
-            System.out.println("Error reading file: " + e.getMessage());
-        }
-    }
+
 
     public static List<Ticket> loadTickets(String filePath) throws IOException {
         ObjectMapper mapper = new ObjectMapper();

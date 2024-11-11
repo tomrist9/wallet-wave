@@ -1,22 +1,20 @@
 package org.example;
 
-import org.example.model.Admin;
-import org.example.model.Client;
 import org.example.model.Ticket;
+
+import java.io.IOException;
+import java.util.List;
+
+import static org.example.service.TicketService.loadTickets;
+import static org.example.service.TicketService.validateTickets;
 
 public class Main {
     public static void main(String[] args) {
-
-   Ticket ticket1=new Ticket();
-   ticket1.share("555-50-09");
-
-   Ticket ticket2=new Ticket();
-   ticket2.share("555-50-09", "tteymurlu9@list.ru");
-
-   Client client=new Client();
-   client.printRole();
-
-   Admin admin=new Admin();
-   admin.printRole();
+        try {
+            List<Ticket> tickets = loadTickets("tickets.json");
+            validateTickets(tickets);
+        } catch (IOException e) {
+            System.out.println("Error reading file: " + e.getMessage());
+        }
     }
 }
