@@ -1,7 +1,9 @@
 package org.example;
+
 import org.example.model.Admin;
 import org.example.model.Client;
 import org.example.model.Ticket;
+
 public class Main {
     public static void main(String[] args) {
 
