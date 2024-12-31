@@ -18,6 +18,10 @@ public class AccountsDTO {
         this.branchAddress = branchAddress;
     }
 
+    public AccountsDTO() {
+
+    }
+
     public Long getAccountNumber() {
         return accountNumber;
     }
