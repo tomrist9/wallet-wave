@@ -9,8 +9,6 @@ import lombok.*;
 @Getter
 @Setter
 @ToString
-@AllArgsConstructor
-@NoArgsConstructor
 public class Accounts extends BaseEntity {
     @Id
     @Column(name = "account_number")
