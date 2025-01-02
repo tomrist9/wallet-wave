@@ -2,9 +2,13 @@ package com.example.accounts.controller;
 
 import com.example.accounts.constants.AccountsConstants;
 import com.example.accounts.dto.CustomerDTO;
+import com.example.accounts.dto.ErrorResponseDto;
 import com.example.accounts.dto.ResponseDTO;
 import com.example.accounts.service.IAccountsService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.info.Contact;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -70,10 +74,21 @@ public class AccountsController {
             summary = "Update Account Details REST API",
             description = "REST API to update Customer & Account details based on Mobile number"
     )
-    @ApiResponse(
-            responseCode = "200",
-            description = "Account details updated successfully"
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "Account details deleted successfully"
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "INTERNAL SERVER ERROR",
+                    content =  @Content(
+                            schema = @Schema(implementation = ErrorResponseDto.class)
+            )
+            )
+    }
     )
+
    @PutMapping("/update")
    public ResponseEntity<ResponseDTO> updateAccount(@Valid @RequestBody CustomerDTO customerDTO) {
         boolean isUpdated= iAccountsService.updateAccount(customerDTO);
