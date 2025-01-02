@@ -1,22 +1,36 @@
 package com.example.accounts.dto;
 
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 
 @Data
+@Schema(
+        name="Accounts",
+        description = "Schema to hold account information"
+)
 public class AccountsDTO {
 
     @NotEmpty(message = "AccountNumber cannot be null or empty")
     @Pattern(regexp = "(^$|[0-9]{10})", message = "AccountNumber must be 10 digits")
+    @Schema(
+            description="Account number of Wsllet-wave account", example = "3456784321"
+    )
     private Long accountNumber;
 
 
     @NotEmpty(message = "AccountType cannot be null or empty")
+    @Schema(
+            description="Account type of Wallet-ave account", example = "Savings"
+    )
     private String accountType;
 
     @NotEmpty(message = "BranchAddress cannot be null or empty")
+    @Schema(
+            description="Wallet-wave branch address"
+    )
     private String branchAddress;
 
     public AccountsDTO(Long accountNumber, String accountType, String branchAddress) {
