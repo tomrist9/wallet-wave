@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-# andersen_trainee
-=======
+
 # Master Microservices with Spring Boot, Docker, and Kubernetes
 
 This project demonstrates the implementation of microservices architecture using **Spring Boot**, **Spring Cloud**, **Docker**, and **Kubernetes**, based on the course *"Master Microservices with Spring Boot, Docker, Kubernetes"*.
