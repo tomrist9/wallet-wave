@@ -24,9 +24,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2r9wxn8I2leQRKzCMcW8t7uhw16" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -42,6 +42,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "android.gradle.sync.needed": "true",
     "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "17",
     "last_opened_file_path": "C:/Users/hp/Downloads/microservices/wallet-ave/loans/src/main/java/com/walletwave/loans",
@@ -98,6 +99,7 @@
       <option name="presentableId" value="Default" />
       <updated>1735984848845</updated>
       <workItem from="1735984849844" duration="5999000" />
+      <workItem from="1736072400767" duration="3000" />
     </task>
     <task id="LOCAL-00001" summary="added loans microservice">
       <option name="closed" value="true" />
