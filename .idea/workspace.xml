@@ -19,6 +19,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -38,12 +43,16 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "android.gradle.sync.needed": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "develop",
     "jdk.selected.JAVA_MODULE": "17",
     "last_opened_file_path": "C:/Users/hp/Downloads/microservices/wallet-ave/loans/src/main/java/com/walletwave/loans",
     "node.js.detected.package.eslint": "true",
@@ -100,6 +109,7 @@
       <updated>1735984848845</updated>
       <workItem from="1735984849844" duration="5999000" />
       <workItem from="1736072400767" duration="3000" />
+      <workItem from="1736236212791" duration="739000" />
     </task>
     <task id="LOCAL-00001" summary="added loans microservice">
       <option name="closed" value="true" />
@@ -117,7 +127,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736071310885</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added dockerfile for accounts microservice">
+      <option name="closed" value="true" />
+      <created>1736236948478</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1736236948478</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,7 +154,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added loans microservice" />
-    <option name="LAST_COMMIT_MESSAGE" value="added loans microservice" />
+    <MESSAGE value="added dockerfile for accounts microservice" />
+    <option name="LAST_COMMIT_MESSAGE" value="added dockerfile for accounts microservice" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
