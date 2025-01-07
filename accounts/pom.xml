@@ -11,6 +11,8 @@
     <groupId>com.example</groupId>
     <artifactId>accounts</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
     <name>accounts</name>
     <description>Microservice for Accounts</description>
     <url/>
