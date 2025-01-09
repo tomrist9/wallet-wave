@@ -7,7 +7,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: "700m"  # Enclosed in quotes
+          memory: "700m"  
     networks:
       - wallet-wave
   loans:
