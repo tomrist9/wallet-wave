@@ -1,0 +1,10 @@
+server:
+  port: 8071
+spring:
+  profiles:
+    active: test
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/configs
