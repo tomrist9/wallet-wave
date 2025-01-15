@@ -1,19 +1,43 @@
 package com.walletwave.cards;
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
-public class Main {
+import com.walletwave.cards.dto.CardsContactInfoDto;
+import io.swagger.v3.oas.annotations.ExternalDocumentation;
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.info.Contact;
+import io.swagger.v3.oas.annotations.info.Info;
+import io.swagger.v3.oas.annotations.info.License;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+
+
+@SpringBootApplication
+@EnableJpaAuditing(auditorAwareRef = "auditAwareImpl")
+@EnableConfigurationProperties(value = {CardsContactInfoDto.class})
+@OpenAPIDefinition(
+        info = @Info(
+                title = "Cards microservice REST API Documentation",
+                description = "Wallet-wave Cards microservice REST API Documentation",
+                version = "v1",
+                contact = @Contact(
+                        name = "Tomris Teymurlu",
+                        email = "tutor@wallet-wave.com",
+                        url = "https://www.wallet-wave.com"
+                ),
+                license = @License(
+                        name = "Apache 2.0",
+                        url = "https://www.wallet-wave.com"
+                )
+        ),
+        externalDocs = @ExternalDocumentation(
+                description = "Wallet-wave Cards microservice REST API Documentation",
+                url = "https://www.wallet-wave.com/swagger-ui.html"
+        )
+)
+public class CardsApplication {
+
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
-
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
-
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+        SpringApplication.run(CardsApplication.class, args);
     }
 }

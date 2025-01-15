@@ -2,6 +2,7 @@ package com.example.controller;
 
 
 import com.example.constants.AccountsConstants;
+import com.example.dto.AccountsContactInfoDto;
 import com.example.dto.CustomerDTO;
 import com.example.dto.ErrorResponseDto;
 import com.example.dto.ResponseDTO;
@@ -41,6 +42,8 @@ public class AccountsController {
 
     @Autowired
     private Environment environment;
+    @Autowired
+    private AccountsContactInfoDto accountsContactInfoDto;
 
     // Constructor injection
     public AccountsController(@Qualifier("accountServiceImpl") IAccountsService iAccountsService) {
@@ -192,6 +195,32 @@ public class AccountsController {
                 .status(HttpStatus.OK)
                 .body(environment.getProperty("JAVA_HOME"));
     }
+
+    @Operation(
+            summary = "Get Contact Info",
+            description = "Get Contact Info details that is deployed into accounts microservice"
+    )
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "HTTP Status OK"
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "HTTP Status Internal Server Error",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDto.class)
+                    )
+            )
+    }
+    )
+    @GetMapping("/contact-info")
+    public ResponseEntity<AccountsContactInfoDto> getContactInfo(){
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(accountsContactInfoDto);
+    }
+
 
 }
 
