@@ -1,10 +1,10 @@
 spring:
   profiles:
-    active: native
+    active: git
   cloud:
     config:
       server:
-        native:
-          search-locations: "file:///C:/Users/wallet-wave/Documents/config"
+       git:
+          uri: "https://github.com/tomrist9/wallet-wave-config.git"
 server:
   port: 8071
