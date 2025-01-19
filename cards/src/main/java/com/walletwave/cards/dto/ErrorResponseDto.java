@@ -5,7 +5,7 @@ import lombok.Data;
 import org.springframework.http.HttpStatus;
 
 import java.time.LocalDateTime;
-@Data @AllArgsConstructor
+@Data
 @Schema(
         name = "ErrorResponse",
         description = "Schema to hold error response information"
@@ -32,4 +32,10 @@ public class ErrorResponseDto {
     )
     private LocalDateTime errorTime;
 
+    public ErrorResponseDto(String apiPath, HttpStatus errorCode, String errorMessage, LocalDateTime errorTime) {
+        this.apiPath = apiPath;
+        this.errorCode = errorCode;
+        this.errorMessage = errorMessage;
+        this.errorTime = errorTime;
+    }
 }
