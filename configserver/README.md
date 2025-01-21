@@ -38,7 +38,7 @@ spring:
     config:
       server:
         git:
-          uri: "https://github.com/your-repo/config-repo.git"
+          uri: "https://github.com/tomrist9/wallet-wave-config.git"
           search-paths: config
           default-label: main
           timeout: 5
@@ -88,7 +88,7 @@ config/
 
 ### Step 1: Clone the Repository
 ```bash
-git clone https://github.com/tomrist9/wallet-wave-config.git
+git clone https://github.com/tomrist9/wallet-wave.git
 ```
 
 ### Step 2: Build the Application
