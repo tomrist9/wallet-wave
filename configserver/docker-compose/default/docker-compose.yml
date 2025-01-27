@@ -1,18 +1,37 @@
 version: '3.8'
 
 services:
-  rabbit:
-    image: rabbitmq:3.13-management
-    hostname: rabbitmq
+  accountsdb:
+    image: mysql
+    container_name: accountsdb
     ports:
-      - "5672:5672"
-      - "15672:15672"
-    healthcheck:
-      test: ["CMD", "rabbitmq-diagnostics", "check_port_connectivity"]
-      interval: 10s
-      timeout: 5s
-      retries: 10
-      start_period: 5s
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: accountsdb
+    extends:
+     file: common-config.yml
+     service: microservice-db-config
+  loansdb:
+    image: mysql
+    container_name: loansdb
+    ports:
+      - 3307:3307
+    environment:
+      MYSQL_DATABASE: loansdb
+    extends:
+      file: common-config.yml
+      service: microservice-db-config
+  cardsdb:
+    image: mysql
+    container_name: cardsdb
+    ports:
+      - 3308:3308
+    environment:
+      MYSQL_DATABASE: cardsdb
+    extends:
+      file: common-config.yml
+      service: microservice-db-config
+
 
   configserver:
     image: "tomristt/configserver:s6"
@@ -34,34 +53,37 @@ services:
     container_name: accounts-ms
     ports:
       - "8080:8080"
-    depends_on:
-      configserver:
-        condition: service_healthy
     environment:
       SPRING_APPLICATION_NAME: "accounts"
+      SPRING_DATASOURCE_URL: "jdbc:mysql://accountsdb:3306/accountsdb"
+    depends_on:
+      accountsdb:
+        condition: service_healthy
+
 
   loans:
     image: "tomristt/loans:s6"
     container_name: loans-ms
     ports:
       - "8090:8090"
-    depends_on:
-      configserver:
-        condition: service_healthy
     environment:
       SPRING_APPLICATION_NAME: "loans"
+      SPRING_DATASOURCE_URL: "jdbc:mysql://loansdb:3307/loansdb"
+    depends_on:
+      loansdb:
+        condition: service_healthy
 
   cards:
     image: "tomristt/cards:s6"
     container_name: cards-ms
     ports:
       - "9000:9000"
-    depends_on:
-      configserver:
-        condition: service_healthy
     environment:
       SPRING_APPLICATION_NAME: "cards"
-
+      SPRING_DATASOURCE_URL: "jdbc:mysql://cardsdb:3308/cardsdb"
+    depends_on:
+      cardsdb:
+        condition: service_healthy
 networks:
   wallet-wave:
     driver: bridge
