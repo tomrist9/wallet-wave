@@ -15,7 +15,7 @@ services:
     image: mysql
     container_name: loansdb
     ports:
-      - 3307:3307
+      - 3307:3306
     environment:
       MYSQL_DATABASE: loansdb
     extends:
@@ -25,7 +25,7 @@ services:
     image: mysql
     container_name: cardsdb
     ports:
-      - 3308:3308
+      - 3308:3306
     environment:
       MYSQL_DATABASE: cardsdb
     extends:
@@ -34,13 +34,10 @@ services:
 
 
   configserver:
-    image: "tomristt/configserver:s6"
+    image: "tomristt/configserver:s7"
     container_name: configserver-ms
     ports:
       - "8071:8071"
-    depends_on:
-      rabbit:
-        condition: service_healthy
     healthcheck:
       test: ["CMD", "sh", "-c", "curl --fail --silent localhost:8071/actuator/health/readiness | grep UP || exit 1"]
       interval: 10s
@@ -49,7 +46,7 @@ services:
       start_period: 10s
 
   accounts:
-    image: "tomristt/accounts:s6"
+    image: "tomristt/accounts:s7"
     container_name: accounts-ms
     ports:
       - "8080:8080"
@@ -62,25 +59,25 @@ services:
 
 
   loans:
-    image: "tomristt/loans:s6"
+    image: "tomristt/loans:s7"
     container_name: loans-ms
     ports:
       - "8090:8090"
     environment:
       SPRING_APPLICATION_NAME: "loans"
-      SPRING_DATASOURCE_URL: "jdbc:mysql://loansdb:3307/loansdb"
+      SPRING_DATASOURCE_URL: "jdbc:mysql://loansdb:3306/loansdb"
     depends_on:
       loansdb:
         condition: service_healthy
 
   cards:
-    image: "tomristt/cards:s6"
+    image: "tomristt/cards:s7"
     container_name: cards-ms
     ports:
       - "9000:9000"
     environment:
       SPRING_APPLICATION_NAME: "cards"
-      SPRING_DATASOURCE_URL: "jdbc:mysql://cardsdb:3308/cardsdb"
+      SPRING_DATASOURCE_URL: "jdbc:mysql://cardsdb:3306/cardsdb"
     depends_on:
       cardsdb:
         condition: service_healthy
