@@ -1,10 +1,10 @@
 server:
-  port: 8080
+  port: 8090
 spring:
   application:
-    name: "accounts"
-    profiles:
-      active: "prod"
+    name: "loans"
+  profiles:
+    active: "prod"
   datasource:
     url: jdbc:h2:mem:testdb
     driverClassName: org.h2.Driver
@@ -18,8 +18,8 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-config:
-  import: "optional:configserver:http://localhost:8071/"
+  config:
+    import: "optional:configserver:http://localhost:8071/"
 
 management:
   endpoints:
@@ -28,16 +28,15 @@ management:
         include: "*"
   endpoint:
     shutdown:
-      access: unrestricted
+      enabled: true
   info:
     env:
       enabled: true
-#      properties:
-#        git:
-#          branch: ${git.branch:unknown}
-#          commit:
-#            id: ${git.commit.id:unknown}
-#            time: ${git.commit.time:unknown}
+
+endpoints:
+  shutdown:
+    enabled: true
+
 eureka:
   instance:
     preferIpAddress: true
@@ -46,8 +45,9 @@ eureka:
     registerWithEureka: true
     serviceUrl:
       defaultZone: http://localhost:8070/eureka/
+
 info:
   app:
-    name: "accounts"
-    description: "Wallet-wave Account Application"
+    name: "loans"
+    description: "Wallet-wave Loans Application"
     version: "1.0.0"
