@@ -1,67 +1,84 @@
 version: '3.8'
 
 services:
-  rabbit:
-    image: rabbitmq:3.13-management
-    hostname: rabbitmq
-    ports:
-      - "5672:5672"
-      - "15672:15672"
-    healthcheck:
-      test: ["CMD", "rabbitmq-diagnostics", "check_port_connectivity"]
-      interval: 10s
-      timeout: 5s
-      retries: 10
-      start_period: 5s
-
   configserver:
-    image: "tomristt/configserver:s6"
+    image: "tomristt/configserver:s8"
     container_name: configserver-ms
     ports:
       - "8071:8071"
-    depends_on:
-      rabbit:
-        condition: service_healthy
     healthcheck:
       test: ["CMD", "sh", "-c", "curl --fail --silent localhost:8071/actuator/health/readiness | grep UP || exit 1"]
       interval: 10s
       timeout: 5s
       retries: 10
       start_period: 10s
-
+    extends:
+      file: common-config.yml
+      service: microservice-eureka-config
+  eurekaserver:
+    image: "tomristt/eurekaserver:s8"
+    container_name: eurekaserver-ms
+    ports:
+      - "8070:8070"
+    healthcheck:
+      test: ["CMD", "sh", "-c", "curl --fail --silent localhost:8070/actuator/health/readiness | grep UP || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    extends:
+      file: common-config.yml
+      service: microservice-configserver-config
+    environment:
+      SPRING_APPLICATION_NAME: "eurekaserver"
   accounts:
-    image: "tomristt/accounts:s6"
+    image: "tomristt/accounts:s8"
     container_name: accounts-ms
     ports:
       - "8080:8080"
     depends_on:
       configserver:
         condition: service_healthy
+      eurekaserver:
+        condition: service_healthy
     environment:
       SPRING_APPLICATION_NAME: "accounts"
+    extends:
+      file: common-config.yml
+      service: microservice-eureka-config
+
 
   loans:
-    image: "tomristt/loans:s6"
+    image: "tomristt/loans:s8"
     container_name: loans-ms
     ports:
       - "8090:8090"
     depends_on:
       configserver:
         condition: service_healthy
+      eurekaserver:
+        condition: service_healthy
     environment:
       SPRING_APPLICATION_NAME: "loans"
+    extends:
+      file: common-config.yml
+      service: microservice-eureka-config
 
   cards:
-    image: "tomristt/cards:s6"
+    image: "tomristt/cards:s8"
     container_name: cards-ms
     ports:
       - "9000:9000"
     depends_on:
       configserver:
         condition: service_healthy
+      eurekaserver:
+        condition: service_healthy
     environment:
       SPRING_APPLICATION_NAME: "cards"
-
+    extends:
+      file: common-config.yml
+      service: microservice-eureka-config
 networks:
   wallet-wave:
     driver: bridge
