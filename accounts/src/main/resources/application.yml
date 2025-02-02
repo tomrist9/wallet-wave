@@ -1,5 +1,6 @@
 server:
   port: 8084
+
 spring:
   application:
     name: "accounts"
@@ -44,10 +45,10 @@ eureka:
     fetchRegistry: true
     registerWithEureka: true
     serviceUrl:
-      defaultZone: http://localhost:8070/eureka/
+      defaultZone: http://eurekaserver:8070/eureka/  # ✅ Docker container name instead of localhost
 
 info:
   app:
-    name: "loans"
-    description: "Wallet-wave Loans Application"
+    name: "accounts"  # ✅ Fixed
+    description: "Wallet-wave Accounts Application"
     version: "1.0.0"
