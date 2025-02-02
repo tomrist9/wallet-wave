@@ -15,6 +15,7 @@ services:
     extends:
       file: common-config.yml
       service: microservice-eureka-config
+
   eurekaserver:
     image: "tomristt/eurekaserver:s8"
     container_name: eurekaserver-ms
@@ -31,6 +32,10 @@ services:
       service: microservice-configserver-config
     environment:
       SPRING_APPLICATION_NAME: "eurekaserver"
+
+    depends_on:
+      configserver:
+        condition: service_healthy
   accounts:
     image: "tomristt/accounts:s8"
     container_name: accounts-ms
