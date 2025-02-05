@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   configserver:
     image: "tomristt/configserver:s8"
@@ -7,22 +5,25 @@ services:
     ports:
       - "8071:8071"
     healthcheck:
-      test: ["CMD", "sh", "-c", "curl --fail --silent localhost:8071/actuator/health/readiness | grep UP || exit 1"]
+      test: "curl --fail --silent localhost:8071/actuator/health/readiness | grep UP || exit 1"
       interval: 10s
       timeout: 5s
       retries: 10
       start_period: 10s
     extends:
       file: common-config.yml
-      service: microservice-eureka-config
+      service: microservice-base-config
 
   eurekaserver:
     image: "tomristt/eurekaserver:s8"
     container_name: eurekaserver-ms
     ports:
       - "8070:8070"
+    depends_on:
+      configserver:
+        condition: service_healthy
     healthcheck:
-      test: ["CMD", "sh", "-c", "curl --fail --silent localhost:8070/actuator/health/readiness | grep UP || exit 1"]
+      test: "curl --fail --silent localhost:8070/actuator/health/readiness | grep UP || exit 1"
       interval: 10s
       timeout: 5s
       retries: 10
@@ -33,9 +34,6 @@ services:
     environment:
       SPRING_APPLICATION_NAME: "eurekaserver"
 
-    depends_on:
-      configserver:
-        condition: service_healthy
   accounts:
     image: "tomristt/accounts:s8"
     container_name: accounts-ms
@@ -52,12 +50,27 @@ services:
       file: common-config.yml
       service: microservice-eureka-config
 
-
   loans:
     image: "tomristt/loans:s8"
     container_name: loans-ms
     ports:
       - "8090:8090"
+    depends_on:
+      configserver:
+        condition: service_healthy
+      eurekaserver:
+        condition: service_healthy
+    environment:
+      SPRING_APPLICATION_NAME: "loans"
+    extends:
+      file: common-config.yml
+      service: microservice-eureka-config
+
+  loans1:
+    image: "tomristt/loans:s8"
+    container_name: loans-ms1
+    ports:
+      - "8091:8090"
     depends_on:
       configserver:
         condition: service_healthy
@@ -84,6 +97,7 @@ services:
     extends:
       file: common-config.yml
       service: microservice-eureka-config
+
 networks:
   wallet-wave:
-    driver: bridge
+    driver: "bridge"
