@@ -49,6 +49,6 @@ eureka:
 
 info:
   app:
-    name: "accounts"  # ✅ Fixed
+    name: "accounts"
     description: "Wallet-wave Accounts Application"
     version: "1.0.0"
