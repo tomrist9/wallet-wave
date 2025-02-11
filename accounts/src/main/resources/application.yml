@@ -1,5 +1,5 @@
 server:
-  port: 8084
+  port: 8080
 
 spring:
   application:
@@ -45,7 +45,7 @@ eureka:
     fetchRegistry: true
     registerWithEureka: true
     serviceUrl:
-      defaultZone: http://eurekaserver:8070/eureka/  # ✅ Docker container name instead of localhost
+      defaultZone: http://localhost:8070/eureka/ # ✅ Docker container name instead of localhost
 
 info:
   app:
