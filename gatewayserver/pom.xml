@@ -13,7 +13,6 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>gatewayserver</name>
 	<description>Edge server for Wallet wave microservices</description>
-	<url/>
 	<licenses>
 		<license/>
 	</licenses>
@@ -41,7 +40,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-gateway-mvc</artifactId>
+			<artifactId>spring-cloud-starter-gateway</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -71,7 +70,6 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-
 	<build>
 		<plugins>
 			<plugin>
