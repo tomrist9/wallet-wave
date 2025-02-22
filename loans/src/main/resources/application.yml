@@ -54,3 +54,9 @@ info:
     description: "Wallet-wave Loans Application"
     version: "1.0.0"
 
+logging:
+  level:
+    com:
+      walletwave:
+        loans: DEBUG
+

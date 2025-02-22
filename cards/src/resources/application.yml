@@ -49,5 +49,11 @@ eureka:
 info:
   app:
     name: "cards"
-    description: "Wallet-wave Loans Application"
+    description: "Wallet-wave Cards Application"
     version: "1.0.0"
+
+logging:
+  level:
+    com:
+      walletwave:
+        loans: DEBUG
