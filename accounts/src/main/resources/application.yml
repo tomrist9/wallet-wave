@@ -52,3 +52,11 @@ info:
     name: "accounts"
     description: "Wallet-wave Accounts Application"
     version: "1.0.0"
+
+logging:
+  level:
+    com:
+      walletwave:
+        accounts: DEBUG
+build:
+  version: "1.0.0"
