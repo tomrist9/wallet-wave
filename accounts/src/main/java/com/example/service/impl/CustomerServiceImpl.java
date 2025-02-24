@@ -14,7 +14,6 @@ import com.example.repository.CustomerRepository;
 import com.example.service.ICustomerService;
 import com.example.service.client.CardsFeignClient;
 import com.example.service.client.LoansFeignClient;
-import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -45,9 +44,13 @@ public class CustomerServiceImpl implements ICustomerService {
         CustomerDetailsDto customerDetailsDto=CustomerMapper.mapToCustomerDtoDetails(customer, new CustomerDetailsDto());
         customerDetailsDto.setAccountsDTO(AccountsMapper.mapToAccountsDTO(accounts, new AccountsDTO()));
         ResponseEntity<LoansDTO> loansDtoResponseEntity=loansFeignClient.fetchLoanDetails(correlationId,mobileNumber);
-        customerDetailsDto.setLoansDTO(loansDtoResponseEntity.getBody());
+        if(null!=loansDtoResponseEntity){
+            customerDetailsDto.setLoansDTO(loansDtoResponseEntity.getBody());
+        }
         ResponseEntity<CardsDto> cardsDtoResponseEntity =cardsFeignClient.fetchCardDetails(correlationId,mobileNumber);
-        customerDetailsDto.setCardsDto(cardsDtoResponseEntity.getBody());
+        if(null!=cardsDtoResponseEntity){
+            customerDetailsDto.setCardsDto(cardsDtoResponseEntity.getBody());
+        }
         return customerDetailsDto;
     }
 }
