@@ -1,59 +1,82 @@
-Wallet-wave Bank Microservices Platform
-Purpose:
-WalletWave is a production-grade bank application built with a microservices architecture using Spring Boot, Docker, and Kubernetes. Designed for real-world financial services, this platform offers a secure, scalable, and resilient solution to handle core banking operations.
+# WalletWave Bank Microservices Platform
 
-Overview:
-This repository contains a practical implementation of a bank application built with modern microservices principles. It leverages best practices, cloud-native design patterns, and advanced tools for building, deploying, and managing a complex banking system.
+WalletWave is a production-grade banking application built with a **microservices architecture** using **Spring Boot, Docker, and Kubernetes**. It is designed to deliver **secure, scalable, and resilient** core banking operations for modern financial services.
 
-Features Implemented:
+## 🚀 Purpose
 
-Microservices Architecture:
+WalletWave offers a robust, cloud-native platform for managing banking operations. This solution is engineered for **production environments**, ensuring reliability, security, and high performance.
 
-Clearly defined service boundaries for core banking functions.
-Robust separation of concerns to handle account management, transaction processing, customer service, and more.
-Spring Boot & Spring Cloud:
+## 🔹 Overview
 
-Development of high-performance microservices using Java, Spring Boot, and Spring Cloud components.
-Seamless integration of cloud-native capabilities like centralized configuration and service discovery.
-API Documentation:
+This repository demonstrates a **complete banking system** built on microservices principles. The platform utilizes modern tools and best practices to ensure **efficient development, deployment, and management** of critical financial services.
 
-Detailed API documentation powered by OpenAPI and Swagger for seamless integration and maintenance.
-Configuration Management:
+## 📌 Features Implemented
 
-Centralized configuration using Spring Cloud Config Server for uniform settings management across all services.
-Service Discovery & Registration:
+### ✅ Microservices Architecture
+- Well-defined **service boundaries** for core banking functionalities.
+- Independent microservices for **account management, transactions, customer service**, etc.
 
-Dynamic registration and discovery of services implemented with Spring Eureka Server to ensure efficient load balancing and high availability.
-Resilience:
+### ✅ Spring Boot & Spring Cloud
+- **Production-ready** microservices developed using Java, **Spring Boot**, and **Spring Cloud**.
+- Seamless **cloud-native** integration with **Spring Cloud Config** and **Eureka Service Discovery**.
 
-Fault tolerance and resiliency built into the system with Resilience4J to handle service interruptions and improve reliability.
-API Gateway:
+### ✅ API Documentation
+- **Swagger / OpenAPI Specification** for detailed API documentation.
 
-Secure and manageable routing using Spring Cloud Gateway to handle cross-cutting concerns such as security and monitoring.
-Event-Driven Architecture:
+### ✅ Configuration Management
+- **Centralized configuration management** using **Spring Cloud Config Server**.
 
-Asynchronous communication for transactions and notifications using RabbitMQ, Apache Kafka, and Spring Cloud Stream.
-Observability:
+### ✅ Service Discovery & Registration
+- **Spring Eureka Server** for dynamic **service discovery and registration**.
 
-Comprehensive monitoring and logging using Prometheus, Grafana, and related tools to maintain system health and performance.
-Security:
+### ✅ Resilience & Fault Tolerance
+- **Resilience4J** for **fault handling** and improving reliability.
 
-Robust security measures using OAuth2, OpenID Connect, and Spring Security to protect sensitive financial data and transactions.
-Docker & Kubernetes:
+### ✅ API Gateway
+- **Spring Cloud Gateway** for managing **secure API routing** and handling cross-cutting concerns.
 
-Containerization of microservices using Docker and orchestration via Kubernetes for easy deployment, scaling, and management.
-Use of Helm for streamlined Kubernetes deployments.
-Tools & Technologies:
+### ✅ Event-Driven Architecture
+- **RabbitMQ, Apache Kafka, Spring Cloud Stream** for **asynchronous messaging** and event-driven processing.
 
-Languages & Frameworks: Java 17+, Spring Boot, Spring Cloud
-Containerization & Orchestration: Docker, Docker Compose, Kubernetes (GKE), Helm
-Messaging & Event Streaming: RabbitMQ, Apache Kafka
-Monitoring & Logging: Prometheus, Grafana, Loki, Promtail, Tempo
-Security: OAuth2, OpenID Connect, Spring Securit
-## Getting Started
+### ✅ Observability & Monitoring
+- **Prometheus, Grafana, Loki, Promtail, Tempo** for **centralized logging, metrics, and tracing**.
 
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/tomrist9/wallet-wave.git
-   cd microservices-project
+### ✅ Security & Authentication
+- **OAuth2, OpenID Connect, Spring Security** for **secure authentication and authorization**.
+
+### ✅ Docker & Kubernetes
+- **Microservices containerized** using **Docker**.
+- **Kubernetes-based deployment** (GKE or on-prem clusters).
+- **Helm for managing Kubernetes deployments**.
+
+---
+
+## ⚙️ Tools & Technologies
+
+| Category           | Technologies Used |
+|-------------------|------------------|
+| **Languages & Frameworks** | Java 17+, Spring Boot, Spring Cloud |
+| **Containerization & Orchestration** | Docker, Docker Compose, Kubernetes (GKE), Helm |
+| **Messaging & Event Streaming** | RabbitMQ, Apache Kafka |
+| **Monitoring & Logging** | Prometheus, Grafana, Loki, Promtail, Tempo |
+| **Security** | OAuth2, OpenID Connect, Spring Security |
+
+---
+
+## 🛠️ Prerequisites
+
+Before running this application, ensure you have:
+
+- **Basic knowledge of Java and Spring framework**.
+- **Understanding of RESTful APIs**.
+- **Docker and Kubernetes installed**.
+
+---
+
+## 🚀 Getting Started
+
+### 🔹 Clone the repository
+```bash
+git clone https://github.com/tomrist9/wallet-wave.git
+cd wallet-wave
 
