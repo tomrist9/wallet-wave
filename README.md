@@ -1,8 +1,8 @@
-# WalletWave Bank Microservices Platform
+# Wallewt-wave Bank Microservices Platform
 
-WalletWave is a production-grade banking application built with a **microservices architecture** using **Spring Boot, Docker, and Kubernetes**. It is designed to deliver **secure, scalable, and resilient** core banking operations for modern financial services.
+Wallet-wave is a production-grade banking application built with a **microservices architecture** using **Spring Boot, Docker, and Kubernetes**. It is designed to deliver **secure, scalable, and resilient** core banking operations for modern financial services.
 
-## 🚀 Purpose
+##  Purpose
 
 WalletWave offers a robust, cloud-native platform for managing banking operations. This solution is engineered for **production environments**, ensuring reliability, security, and high performance.
 
