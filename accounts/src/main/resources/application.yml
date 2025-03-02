@@ -77,3 +77,10 @@ resilience4j.circuitbreaker:
       permittedNumberOfCallsInHalfOpenState: 2
       failureRateThreshold: 50
       waitDurationInOpenState: 10000
+resilience4j.retry:
+  configs:
+    default:
+      max-attempts: 3
+      wait-duration: 500
+      enable-exponential-backoff: true
+      exponential-backoff-multiplier: 2
