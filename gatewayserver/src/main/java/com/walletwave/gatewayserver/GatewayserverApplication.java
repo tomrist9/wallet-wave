@@ -35,7 +35,7 @@ public class GatewayserverApplication {
 				.path("/walletwave/loans/**")
 						.filters(f -> f.rewritePath("/walletwave/loans/(?<segment>.*)", "/$[segment}")
 								.addResponseHeader("X-Response-Time", LocalDateTime.now().toString())
-								.retry(retryConfig -> retryConfig.setRetries(3)
+								.retry(retryConfig -> retryConfig.setRetries(3).setExceptions()
 										.setMethods(HttpMethod.GET)
 										.setBackoff(Duration.ofMillis(100), Duration.ofMillis(1000), 2, true)))
 
