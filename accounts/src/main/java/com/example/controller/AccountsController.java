@@ -28,6 +28,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.concurrent.TimeoutException;
+
 @Tag(
         name="CRUD REST APIs for Accounts in Wallet-wave",
         description = "CRUD REST APIs in Wallet-wave to CREATE, UPDATE, FETCH AND DELETE account details"
@@ -169,12 +171,11 @@ public class AccountsController {
     )
     @Retry(name="getBuildInfo", fallbackMethod = "getBuildInfoFallback")
     @GetMapping("/build-info")
-    public ResponseEntity<String> getBuildInfo(){
+    public ResponseEntity<String> getBuildInfo() throws TimeoutException {
         logger.debug("getBuildInfo() method Invoked");
-        throw new NullPointerException();
-//        return ResponseEntity
-//                .status(HttpStatus.OK)
-//                .body(buildVersion);
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(buildVersion);
     }
     public ResponseEntity<String> getBuildInfoFallback(Throwable throwable) {
         logger.debug("getBuildInfoFallback() method Invoked");
