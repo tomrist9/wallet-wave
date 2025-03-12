@@ -120,7 +120,7 @@
                 <version>3.4.2</version>
                 <configuration>
                     <to>
-                        <image>tomristt/${project.artifactId}:s9</image>
+                        <image>tomristt/${project.artifactId}:s10</image>
                     </to>
 
                     <!--                <excludes>-->
