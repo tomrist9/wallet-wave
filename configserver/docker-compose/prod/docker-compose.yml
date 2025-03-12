@@ -12,7 +12,7 @@ services:
       service: network-deploy-service
 
   configserver:
-    image: "tomristt/configserver:s8"
+    image: "tomristt/configserver:s10"
     container_name: configserver-ms
     ports:
       - "8071:8071"
@@ -27,7 +27,7 @@ services:
       service: microservice-base-config
 
   eurekaserver:
-    image: "tomristt/eurekaserver:s8"
+    image: "tomristt/eurekaserver:s10"
     container_name: eurekaserver-ms
     ports:
       - "8070:8070"
@@ -47,7 +47,7 @@ services:
       SPRING_APPLICATION_NAME: "eurekaserver"
 
   accounts:
-    image: "tomristt/accounts:s8"
+    image: "tomristt/accounts:s10"
     container_name: accounts-ms
     ports:
       - "8080:8080"
@@ -63,7 +63,7 @@ services:
       service: microservice-eureka-config
 
   loans:
-    image: "tomristt/loans:s8"
+    image: "tomristt/loans:s10"
     container_name: loans-ms
     ports:
       - "8090:8090"
@@ -80,7 +80,7 @@ services:
 
 
   cards:
-    image: "tomristt/cards:s8"
+    image: "tomristt/cards:s10"
     container_name: cards-ms
     ports:
       - "9000:9000"
