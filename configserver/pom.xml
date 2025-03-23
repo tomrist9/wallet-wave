@@ -23,6 +23,11 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>io.micrometer</groupId>
+			<artifactId>micrometer-registry-prometheus</artifactId>
+		</dependency>
+
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
@@ -60,7 +65,7 @@
 				<version>3.4.2</version>
 				<configuration>
 					<to>
-						<image>tomristt/${project.artifactId}:s10</image>
+						<image>tomristt/${project.artifactId}:s11</image>
 					</to>
 				</configuration>
 			</plugin>

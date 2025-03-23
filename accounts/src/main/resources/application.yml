@@ -1,6 +1,5 @@
 server:
   port: 8080
-
 spring:
   application:
     name: "accounts"
@@ -21,11 +20,10 @@ spring:
     show-sql: true
   config:
     import: "optional:configserver:http://localhost:8071/"
-
   cloud:
     openfeign:
-     circuitbreaker:
-      enabled: true
+      circuitbreaker:
+        enabled: true
 
 management:
   endpoints:
@@ -39,13 +37,16 @@ management:
       enabled: true
   endpoint:
     shutdown:
-      enabled: true
+      access: unrestricted
     health:
       probes:
         enabled: true
   info:
     env:
       enabled: true
+  metrics:
+    tags:
+      application: ${spring.application.name}
 
 
 eureka:
@@ -55,7 +56,7 @@ eureka:
     fetchRegistry: true
     registerWithEureka: true
     serviceUrl:
-      defaultZone: http://localhost:8070/eureka/ # ✅ Docker container name instead of localhost
+      defaultZone: http://localhost:8070/eureka/
 
 info:
   app:
@@ -66,10 +67,11 @@ info:
 logging:
   level:
     com:
-      walletwave:
+      eazybytes:
         accounts: DEBUG
-build:
-  version: "1.0.0"
+  pattern:
+    level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"
+
 resilience4j.circuitbreaker:
   configs:
     default:
@@ -77,15 +79,18 @@ resilience4j.circuitbreaker:
       permittedNumberOfCallsInHalfOpenState: 2
       failureRateThreshold: 50
       waitDurationInOpenState: 10000
+
 resilience4j.retry:
   configs:
     default:
-      max-attempts: 3
-      wait-duration: 500
-      enable-exponential-backoff: true
-      exponential-backoff-multiplier: 2
-      ignore-exceptions:
+      maxAttempts: 3
+      waitDuration: 500
+      enableExponentialBackoff: true
+      exponentialBackoffMultiplier: 2
+      ignoreExceptions:
         - java.lang.NullPointerException
+      retryExceptions:
+        - java.util.concurrent.TimeoutException
 
 resilience4j.ratelimiter:
   configs:

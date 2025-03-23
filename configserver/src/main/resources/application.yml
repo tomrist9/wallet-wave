@@ -2,14 +2,10 @@ spring:
   application:
     name: "configserver"
   profiles:
-    # active: native
     active: git
   cloud:
     config:
       server:
-        # native:
-        # search-locations: "classpath:/config"
-        # search-locations: "file:///Users//eazybytes//Documents//config"
         git:
           uri: "https://github.com/tomrist9/wallet-wave-config.git"
           search-paths: config
@@ -31,6 +27,10 @@ management:
   endpoint:
     health:
       probes:
+        enabled: true
+  prometheus:
+    metrics:
+      export:
         enabled: true
 
 encrypt:
