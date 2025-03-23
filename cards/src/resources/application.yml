@@ -33,17 +33,17 @@ management:
       enabled: true
   endpoint:
     shutdown:
-      enabled: true
+      access: unrestricted
     health:
       probes:
         enabled: true
   info:
     env:
       enabled: true
+  metrics:
+    tags:
+      application: ${spring.application.name}
 
-endpoints:
-  shutdown:
-    enabled: true
 
 eureka:
   instance:
@@ -63,5 +63,7 @@ info:
 logging:
   level:
     com:
-      walletwave:
-        loans: DEBUG
+      wallet-wave:
+        cards: DEBUG
+  pattern:
+    level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"

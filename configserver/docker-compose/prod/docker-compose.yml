@@ -16,7 +16,7 @@ services:
       timeout: 5s
       retries: 5
     networks: &loki-dns
-      walletwave:
+      wallet-wave:
         aliases:
           - loki
 
@@ -310,8 +310,7 @@ services:
         condition: service_healthy
       cards:
         condition: service_healthy
-      redis:
-        condition: service_healthy
+
     environment:
       SPRING_APPLICATION_NAME: "gatewayserver"
 
