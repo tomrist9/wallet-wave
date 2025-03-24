@@ -67,7 +67,7 @@ info:
 logging:
   level:
     com:
-      eazybytes:
+      wallet_wave:
         accounts: DEBUG
   pattern:
     level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"

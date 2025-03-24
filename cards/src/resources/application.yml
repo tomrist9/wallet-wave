@@ -20,6 +20,10 @@ spring:
     show-sql: true
   config:
     import: "optional:configserver:http://localhost:8071/"
+  cloud:
+    openfeign:
+      circuitbreaker:
+        enabled: true
 
 management:
   endpoints:
@@ -43,7 +47,6 @@ management:
   metrics:
     tags:
       application: ${spring.application.name}
-
 
 eureka:
   instance:

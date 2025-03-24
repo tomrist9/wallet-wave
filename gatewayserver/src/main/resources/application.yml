@@ -1,12 +1,8 @@
-server:
-  port: 8072
-
 spring:
   application:
     name: "gatewayserver"
   config:
     import: "optional:configserver:http://localhost:8071/"
-
   cloud:
     gateway:
       discovery:
@@ -16,7 +12,12 @@ spring:
       httpclient:
         connect-timeout: 1000
         response-timeout: 10s
-
+  data:
+    redis:
+      connect-timeout: 2s
+      host: localhost
+      port: 6379
+      timeout: 1s
 
 management:
   endpoints:
@@ -24,24 +25,14 @@ management:
       exposure:
         include: "*"
   endpoint:
-    shutdown:
-      enabled: true
+    gateway:
+      access: unrestricted
   info:
     env:
       enabled: true
-
-endpoints:
-  shutdown:
-    enabled: true
-
-eureka:
-  instance:
-    preferIpAddress: true
-  client:
-    fetchRegistry: true
-    registerWithEureka: true
-    serviceUrl:
-      defaultZone: http://localhost:8070/eureka/
+  metrics:
+    tags:
+      application: ${spring.application.name}
 
 info:
   app:
@@ -49,12 +40,13 @@ info:
     description: "Wallet wave Gateway Server Application"
     version: "1.0.0"
 
-
 logging:
   level:
     com:
-      walletwave:
+      wallet_wave:
         gatewayserver: DEBUG
+  pattern:
+    level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"
 
 resilience4j.circuitbreaker:
   configs:
@@ -63,6 +55,3 @@ resilience4j.circuitbreaker:
       permittedNumberOfCallsInHalfOpenState: 2
       failureRateThreshold: 50
       waitDurationInOpenState: 10000
-
-
-
