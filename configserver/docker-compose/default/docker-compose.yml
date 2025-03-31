@@ -221,9 +221,9 @@ services:
       - "8071:8071"
     healthcheck:
       test: "curl --fail --silent localhost:8071/actuator/health/readiness | grep UP || exit 1"
-      interval: 10s
+      interval: 20s
       timeout: 5s
-      retries: 10
+      retries: 20
       start_period: 10s
     extends:
       file: common-config.yml
@@ -239,9 +239,9 @@ services:
         condition: service_healthy
     healthcheck:
       test: "curl --fail --silent localhost:8070/actuator/health/readiness | grep UP || exit 1"
-      interval: 10s
+      interval: 20s
       timeout: 5s
-      retries: 10
+      retries: 20
       start_period: 10s
     extends:
       file: common-config.yml
@@ -261,9 +261,9 @@ services:
         condition: service_healthy
     healthcheck:
       test: "curl --fail --silent localhost:8080/actuator/health/readiness | grep UP || exit 1"
-      interval: 10s
+      interval: 20s
       timeout: 5s
-      retries: 10
+      retries: 20
       start_period: 15s
     environment:
       SPRING_APPLICATION_NAME: "accounts"
@@ -284,9 +284,9 @@ services:
         condition: service_healthy
     healthcheck:
       test: "curl --fail --silent localhost:8090/actuator/health/readiness | grep UP || exit 1"
-      interval: 10s
+      interval: 20s
       timeout: 5s
-      retries: 10
+      retries: 20
       start_period: 15s
     environment:
       SPRING_APPLICATION_NAME: "loans"
@@ -305,9 +305,9 @@ services:
         condition: service_healthy
     healthcheck:
       test: "curl --fail --silent localhost:9000/actuator/health/readiness | grep UP || exit 1"
-      interval: 10s
+      interval: 20s
       timeout: 5s
-      retries: 10
+      retries: 20
       start_period: 15s
     environment:
       SPRING_APPLICATION_NAME: "cards"
