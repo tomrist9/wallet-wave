@@ -1,93 +1,82 @@
+# Wallet-wave Bank Microservices Platform
 
-# Master Microservices with Spring Boot, Docker, and Kubernetes
+Wallet-wave is a production-grade banking application built with a **microservices architecture** using **Spring Boot, Docker, and Kubernetes**. It is designed to deliver **secure, scalable, and resilient** core banking operations for modern financial services.
 
-This project demonstrates the implementation of microservices architecture using **Spring Boot**, **Spring Cloud**, **Docker**, and **Kubernetes**, based on the course *"Master Microservices with Spring Boot, Docker, Kubernetes"*.
+##  Purpose
 
-## Overview
+WalletWave offers a robust, cloud-native platform for managing banking operations. This solution is engineered for **production environments**, ensuring reliability, security, and high performance.
 
-This repository contains a practical example of building production-ready microservices. It includes configurations and implementations of microservices following best practices, cloud-native design patterns, and advanced tools for building, deploying, and managing microservices-based applications.
+## 🔹 Overview
 
-## Features Implemented
+This repository demonstrates a **complete banking system** built on microservices principles. The platform utilizes modern tools and best practices to ensure **efficient development, deployment, and management** of critical financial services.
 
-1. **Microservices Architecture**:
-   - Explanation of microservices architecture and its differences from monolithic and SOA architectures.
-   - Identification of service boundaries and right-sizing of microservices.
+## 📌 Features Implemented
 
-2. **Spring Boot & Spring Cloud**:
-   - Development of production-ready microservices using Java, Spring Boot, and Spring Cloud components.
+### ✅ Microservices Architecture
+- Well-defined **service boundaries** for core banking functionalities.
+- Independent microservices for **account management, transactions, customer service**, etc.
 
-3. **API Documentation**:
-   - API documentation using **OpenAPI Specification** and **Swagger**.
+### ✅ Spring Boot & Spring Cloud
+- **Production-ready** microservices developed using Java, **Spring Boot**, and **Spring Cloud**.
+- Seamless **cloud-native** integration with **Spring Cloud Config** and **Eureka Service Discovery**.
 
-4. **Configuration Management**:
-   - Centralized configuration management using **Spring Cloud Config Server**.
+### ✅ API Documentation
+- **Swagger / OpenAPI Specification** for detailed API documentation.
 
-5. **Service Discovery & Registration**:
-   - Implementation of service discovery and registration using **Spring Eureka Server**.
+### ✅ Configuration Management
+- **Centralized configuration management** using **Spring Cloud Config Server**.
 
-6. **Resilience**:
-   - Built resilient microservices with **Resilience4J** to handle faults and improve reliability.
+### ✅ Service Discovery & Registration
+- **Spring Eureka Server** for dynamic **service discovery and registration**.
 
-7. **API Gateway**:
-   - Managed routing and cross-cutting concerns using **Spring Cloud Gateway**.
+### ✅ Resilience & Fault Tolerance
+- **Resilience4J** for **fault handling** and improving reliability.
 
-8. **Event-Driven Microservices**:
-   - Asynchronous communication using **RabbitMQ**, **Apache Kafka**, **Spring Cloud Functions**, and **Spring Cloud Stream**.
+### ✅ API Gateway
+- **Spring Cloud Gateway** for managing **secure API routing** and handling cross-cutting concerns.
 
-9. **Observability**:
-   - Observability and monitoring using **Prometheus**, **Loki**, **Promtail**, **Tempo**, and **Grafana**.
+### ✅ Event-Driven Architecture
+- **RabbitMQ, Apache Kafka, Spring Cloud Stream** for **asynchronous messaging** and event-driven processing.
 
-10. **Security**:
-    - Secured microservices using **OAuth2**, **OpenID Connect**, and **Spring Security**.
+### ✅ Observability & Monitoring
+- **Prometheus, Grafana, Loki, Promtail, Tempo** for **centralized logging, metrics, and tracing**.
 
-11. **Docker Integration**:
-    - Built and managed Docker images and containers.
-    - Used **Docker Compose** to orchestrate microservices.
+### ✅ Security & Authentication
+- **OAuth2, OpenID Connect, Spring Security** for **secure authentication and authorization**.
 
-12. **Kubernetes Deployment**:
-    - Deployed microservices using **Kubernetes** as the container orchestration framework.
-    - Setup Kubernetes cluster in **Google Kubernetes Engine (GCP)**.
+### ✅ Docker & Kubernetes
+- **Microservices containerized** using **Docker**.
+- **Kubernetes-based deployment** (GKE or on-prem clusters).
+- **Helm for managing Kubernetes deployments**.
 
-13. **Helm**:
-    - Managed Kubernetes deployments with **Helm**.
+---
 
-## Tools & Technologies
+## ⚙️ Tools & Technologies
 
-- **Java 17+**
-- **Spring Boot**, **Spring Cloud**
-- **Docker**, **Docker Compose**
-- **RabbitMQ**, **Apache Kafka**
-- **Prometheus**, **Grafana**, **Loki**, **Promtail**, **Tempo**
-- **Kubernetes** (GKE)
-- **Helm**
-- **OAuth2**, **OpenID Connect**, **Spring Security**
+| Category           | Technologies Used |
+|-------------------|------------------|
+| **Languages & Frameworks** | Java 17+, Spring Boot, Spring Cloud |
+| **Containerization & Orchestration** | Docker, Docker Compose, Kubernetes (GKE), Helm |
+| **Messaging & Event Streaming** | RabbitMQ, Apache Kafka |
+| **Monitoring & Logging** | Prometheus, Grafana, Loki, Promtail, Tempo |
+| **Security** | OAuth2, OpenID Connect, Spring Security |
 
-## Prerequisites
+---
 
-- Basic knowledge of **Java** and the **Spring framework**.
-- Understanding of RESTful API concepts.
+## 🛠️ Prerequisites
 
-## Learning Outcomes
+Before running this application, ensure you have:
 
-By exploring this project, you will learn:
+- **Basic knowledge of Java and Spring framework**.
+- **Understanding of RESTful APIs**.
+- **Docker and Kubernetes installed**.
 
-- How to design and build production-ready microservices.
-- The role of Docker and Kubernetes in deploying and managing microservices.
-- How to implement event-driven architectures.
-- How to handle observability and monitoring in a distributed system.
-- Best practices for securing microservices.
-- Real-world techniques for using Helm, Docker Compose, and Kubernetes commands.
+---
 
-## Who Should Explore This?
+## 🚀 Getting Started
 
-- Developers new to microservices and Spring Boot.
-- Experienced Java developers interested in transitioning to microservices architecture.
-- Architects looking to understand the microservices development and deployment ecosystem.
-
-## Getting Started
-
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/tomrist9/wallet-wave.git
-   cd microservices-project
+### 🔹 Clone the repository
+```bash
+git clone https://github.com/tomrist9/wallet-wave.git
+cd wallet-wave
 
