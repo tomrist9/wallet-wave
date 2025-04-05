@@ -17,9 +17,9 @@ public class SecurityConfig {
     @Bean
     public SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity serverHttpSecurity) {
         serverHttpSecurity.authorizeExchange(exchanges -> exchanges.pathMatchers(HttpMethod.GET).permitAll()
-                        .pathMatchers("/walletwave/accounts/**").authenticated()
-                        .pathMatchers("/walletwave/cards/**").authenticated()
-                        .pathMatchers("/walletwave/loans/**").authenticated())
+                        .pathMatchers("/walletwave/accounts/**").hasRole("ACCOUNTS")
+                        .pathMatchers("/walletwave/cards/**").hasRole("CARDS")
+                        .pathMatchers("/walletwave/loans/**").hasRole("LOANS"))
                 .oauth2ResourceServer(oAuth2ResourceServerSpec -> oAuth2ResourceServerSpec.jwt(Customizer.withDefaults()));
         serverHttpSecurity.csrf(csrfSpec -> csrfSpec.disable());
         return serverHttpSecurity.build();
