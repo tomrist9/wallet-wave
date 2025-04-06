@@ -10,7 +10,7 @@ WalletWave offers a robust, cloud-native platform for managing banking operation
 
 This repository demonstrates a **complete banking system** built on microservices principles. The platform utilizes modern tools and best practices to ensure **efficient development, deployment, and management** of critical financial services.
 
-## 📌 Features Implemented
+##  Features Implemented
 
 ### ✅ Microservices Architecture
 - Well-defined **service boundaries** for core banking functionalities.
