@@ -29,7 +29,7 @@ services:
       timeout: 5s
       retries: 5
     networks: &loki-dns
-      wallet-wave:
+      eazybank:
         aliases:
           - loki
 
@@ -186,7 +186,6 @@ services:
             }
 
             location = /api/prom/push {
-        auth_basic off;
               proxy_pass       http://write:3100\$$request_uri;
             }
 
@@ -227,6 +226,7 @@ services:
     extends:
       file: common-config.yml
       service: network-deploy-service
+
   configserver:
     image: "tomristt/configserver:s12"
     container_name: configserver-ms
@@ -241,6 +241,8 @@ services:
     extends:
       file: common-config.yml
       service: microservice-base-config
+    environment:
+      OTEL_SERVICE_NAME: "configserver"
 
   eurekaserver:
     image: "tomristt/eurekaserver:s12"
@@ -261,12 +263,11 @@ services:
       service: microservice-configserver-config
     environment:
       SPRING_APPLICATION_NAME: "eurekaserver"
+      OTEL_SERVICE_NAME: "eurekaserver"
 
   accounts:
     image: "tomristt/accounts:s12"
     container_name: accounts-ms
-    ports:
-      - "8080:8080"
     depends_on:
       configserver:
         condition: service_healthy
@@ -277,19 +278,17 @@ services:
       interval: 20s
       timeout: 5s
       retries: 20
-      start_period: 15s
+      start_period: 10s
     environment:
       SPRING_APPLICATION_NAME: "accounts"
+      OTEL_SERVICE_NAME: "accounts"
     extends:
       file: common-config.yml
       service: microservice-eureka-config
 
-
   loans:
     image: "tomristt/loans:s12"
     container_name: loans-ms
-    ports:
-      - "8090:8090"
     depends_on:
       configserver:
         condition: service_healthy
@@ -300,17 +299,17 @@ services:
       interval: 20s
       timeout: 5s
       retries: 20
-      start_period: 15s
+      start_period: 10s
     environment:
       SPRING_APPLICATION_NAME: "loans"
+      OTEL_SERVICE_NAME: "loans"
     extends:
       file: common-config.yml
       service: microservice-eureka-config
+
   cards:
     image: "tomristt/cards:s12"
     container_name: cards-ms
-    ports:
-      - "9000:9000"
     depends_on:
       configserver:
         condition: service_healthy
@@ -321,9 +320,10 @@ services:
       interval: 20s
       timeout: 5s
       retries: 20
-      start_period: 15s
+      start_period: 10s
     environment:
       SPRING_APPLICATION_NAME: "cards"
+      OTEL_SERVICE_NAME: "cards"
     extends:
       file: common-config.yml
       service: microservice-eureka-config
@@ -342,6 +342,8 @@ services:
         condition: service_healthy
     environment:
       SPRING_APPLICATION_NAME: "gatewayserver"
+      OTEL_SERVICE_NAME: "gatewayserver"
+      SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWK-SET-URI: "http://keycloak:8080/realms/master/protocol/openid-connect/certs"
     extends:
       file: common-config.yml
       service: microservice-eureka-config
