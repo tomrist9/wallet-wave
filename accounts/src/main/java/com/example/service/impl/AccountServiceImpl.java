@@ -14,21 +14,23 @@ import com.example.mapper.CustomerMapper;
 import com.example.repository.AccountsRepository;
 import com.example.repository.CustomerRepository;
 import com.example.service.IAccountsService;
+import lombok.AllArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.cloud.stream.function.StreamBridge;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 import java.util.Random;
 
 @Service
-
+@AllArgsConstructor
 public class AccountServiceImpl implements IAccountsService {
+    private static final Logger log = LoggerFactory.getLogger(AccountServiceImpl.class);
     private AccountsRepository accountsRepository;
     private CustomerRepository customerRepository;
+    private final StreamBridge streamBridge;
 
-    public AccountServiceImpl(AccountsRepository accountsRepository, CustomerRepository customerRepository) {
-        this.accountsRepository = accountsRepository;
-        this.customerRepository = customerRepository;
-    }
 
     @Override
     public void createAccount(CustomerDTO customerDto) {
@@ -39,7 +41,7 @@ public class AccountServiceImpl implements IAccountsService {
                     customerDto.getMobileNumber());
         }
         Customer savedCustomer=customerRepository.save(customer);
-        accountsRepository.save(createNewAccount(savedCustomer));
+        Accounts avedCustomer=accountsRepository.save(createNewAccount(savedCustomer));
     }
 
     @Override
