@@ -4,6 +4,7 @@ package com.example.service.impl;
 
 import com.example.constants.AccountsConstants;
 import com.example.dto.AccountsDTO;
+import com.example.dto.AccountsMsgDto;
 import com.example.dto.CustomerDTO;
 import com.example.entity.Accounts;
 import com.example.entity.Customer;
@@ -41,7 +42,17 @@ public class AccountServiceImpl implements IAccountsService {
                     customerDto.getMobileNumber());
         }
         Customer savedCustomer=customerRepository.save(customer);
-        Accounts avedCustomer=accountsRepository.save(createNewAccount(savedCustomer));
+        Accounts savedAccount=accountsRepository.save(createNewAccount(savedCustomer));
+        sendCommunication(savedAccount, savedCustomer);
+    }
+
+    private void sendCommunication(Accounts account, Customer customer){
+        var accountsMsgDto =new AccountsMsgDto(account.getAccountNumber(), customer.getName(),
+                customer.getEmail(), customer.getMobileNumber());
+        log.info("Sending Communication request for the details: {}", accountsMsgDto);
+        var result=streamBridge.send("sendCommunication-out-O", accountsMsgDto);
+        log.info("Is the communication request successfully processed?: {}", result);
+
     }
 
     @Override
