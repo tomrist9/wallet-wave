@@ -30,7 +30,7 @@ public class GatewayserverApplication {
                 .routes()
                 .route(p-> p
 						.path("/walletwave/accounts/**")
-						.filters(f -> f.rewritePath("/walletwave/accounts/(?<segment>.*)", "/$[segment}")
+						.filters(f -> f.rewritePath("/walletwave/accounts/(?<segment>.*)", "/${segment}")
 								.addResponseHeader("X-Response-Time", LocalDateTime.now().toString())
 						.circuitBreaker(config -> config.setName("accountsCircuitBreaker")
 								.setFallbackUri("forward:/contactSupport")))
