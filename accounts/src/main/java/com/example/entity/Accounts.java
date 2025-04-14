@@ -20,10 +20,11 @@ public class Accounts extends BaseEntity {
     @Column(name = "account_type")
     private String accountType;
 
-
-
     @Column(name = "branch_address")
     private String branchAddress;
+
+    @Column(name="communication_sw")
+    private Boolean communicationSw;
 
     public Accounts() {
     }
