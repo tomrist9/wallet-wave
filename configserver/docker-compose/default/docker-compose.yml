@@ -327,6 +327,18 @@ services:
     extends:
       file: common-config.yml
       service: microservice-eureka-config
+  message:
+    image: "tomristt/message:s13"
+    container_name: message-ms
+    depends_on:
+      rabbit:
+        condition: service_healthy
+    environment:
+      SPRING_RABBITMQ_HOST: "rabbit"
+    extends:
+      file: common-config.yml
+      service: network-deploy-service
+
 
   gatewayserver:
     image: "tomristt/gatewayserver:s12"
