@@ -26,8 +26,8 @@ import java.util.Random;
 
 @Service
 @AllArgsConstructor
-public class AccountServiceImpl implements IAccountsService {
-    private static final Logger log = LoggerFactory.getLogger(AccountServiceImpl.class);
+public class AccountsServiceImpl implements IAccountsService {
+    private static final Logger log = LoggerFactory.getLogger(AccountsServiceImpl.class);
     private AccountsRepository accountsRepository;
     private CustomerRepository customerRepository;
     private final StreamBridge streamBridge;

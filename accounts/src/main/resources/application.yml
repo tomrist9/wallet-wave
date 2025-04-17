@@ -34,12 +34,10 @@ spring:
           group: ${spring.application.name}
         sendCommunication-out-0:
           destination: send-communication
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
-    connection-timeout: 10s
+      kafka:
+        binder:
+          brokers:
+            - localhost:9092
   security:
     oauth2:
       resourceserver:
