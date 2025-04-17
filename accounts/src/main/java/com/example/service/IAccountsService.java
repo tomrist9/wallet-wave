@@ -5,7 +5,7 @@ import com.example.dto.CustomerDTO;
 import org.springframework.stereotype.Service;
 
 
-@Service
+
 public interface IAccountsService {
     /**
      * @param customerDTO
