@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: configserver
-        image: tomristt/configserver:s12
+        image: tomristt/configserver:s15
         ports:
         - containerPort: 8071
 ---
