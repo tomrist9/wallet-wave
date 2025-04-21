@@ -73,7 +73,7 @@ Before running this application, ensure you have:
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### 🔹 Clone the repository
 ```bash
