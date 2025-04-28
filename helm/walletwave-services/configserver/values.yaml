@@ -20,9 +20,9 @@ service:
   targetPort: 8071
 
 appname_enabled: true
-profile_enabled: true
-config_enabled: true
-eureka_enabled: true
+profile_enabled: false
+config_enabled: false
+eureka_enabled: false
 resouceserver_enabled: false
 otel_enabled: true
 kafka_enabled: false
