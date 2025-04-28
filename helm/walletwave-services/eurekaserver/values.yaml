@@ -1,23 +1,23 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-deploymentName: accounts-deployment
-serviceName: accounts
-appLabel: accounts
-appName: accounts
+deploymentName: eurekaserver-deployment
+serviceName: eurekaserver
+appLabel: eurekaserver
+appName: eurekaserver
 
 replicaCount: 1
 
 image:
-  repository: tomristt/accounts
+  repository: tomristt/eurekaserver
   tag: s14
 
-containerPort: 8080
+containerPort: 8070
 
 service:
   type: ClusterIP
   port: 8080
-  targetPort: 8080
+  targetPort: 8070
 
 appname_enabled: true
 profile_enabled: true
@@ -25,4 +25,4 @@ config_enabled: true
 eureka_enabled: true
 resouceserver_enabled: false
 otel_enabled: true
-kafka_enabled: true
+kafka_enabled: false
