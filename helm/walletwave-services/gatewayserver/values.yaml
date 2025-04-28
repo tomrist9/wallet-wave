@@ -23,6 +23,6 @@ appname_enabled: true
 profile_enabled: true
 config_enabled: true
 eureka_enabled: true
-resouceserver_enabled: false
+resouceserver_enabled: true
 otel_enabled: true
 kafka_enabled: false
