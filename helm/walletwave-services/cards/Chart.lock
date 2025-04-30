@@ -3,4 +3,4 @@ dependencies:
   repository: file://../../walletwave-common
   version: 0.1.0
 digest: sha256:2cc04f7bf4ec84b2520eeffb15899f1e3d57affd93b899ea8656ad2cf5c96a21
-generated: "2025-04-28T21:52:11.955997+04:00"
+generated: "2025-04-28T23:14:43.93991+04:00"
