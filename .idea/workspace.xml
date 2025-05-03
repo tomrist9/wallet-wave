@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09494a29-ca61-4f47-b8c8-b43930b88f40" name="Changes" comment="deep dive into helm" />
+    <list default="true" id="09494a29-ca61-4f47-b8c8-b43930b88f40" name="Changes" comment="deep dive into helm">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -303,7 +305,9 @@
       <workItem from="1745824131752" duration="7268000" />
       <workItem from="1745915035165" duration="1592000" />
       <workItem from="1745999302233" duration="2406000" />
-      <workItem from="1746169492775" duration="5356000" />
+      <workItem from="1746169492775" duration="5668000" />
+      <workItem from="1746186476656" duration="859000" />
+      <workItem from="1746258761452" duration="1765000" />
     </task>
     <task id="LOCAL-00001" summary="implementing logging using Grafana, Loki &amp; promtail">
       <option name="closed" value="true" />
