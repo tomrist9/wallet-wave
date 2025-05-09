@@ -35,7 +35,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 		),
 		externalDocs = @ExternalDocumentation(
 				description = "Find more info here",
-                url = "https://github.com/tomrist9/wallet-wave/accounts/blob/main/README.md"
+                url = "https://github.com/tomrist9/wallet-wave/blob/main/README.md"
 		)
 )
 public class AccountsApplication {

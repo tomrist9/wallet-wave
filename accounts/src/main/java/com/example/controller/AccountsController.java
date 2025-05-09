@@ -53,7 +53,7 @@ public class AccountsController {
     }
 
 
-    @Value("${build.version}")
+   @Value("${build.version}")
     private String buildVersion;
 
     @Autowired
