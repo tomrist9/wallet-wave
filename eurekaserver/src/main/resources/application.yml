@@ -4,6 +4,11 @@ spring:
   config:
     import: "optional:configserver:http://localhost:8071/"
 
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+
 management:
   endpoints:
     web:
