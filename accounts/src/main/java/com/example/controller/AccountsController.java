@@ -87,12 +87,15 @@ public class AccountsController {
             description = "Account details fetched successfully"
     )
     @GetMapping("/fetch")
-    public ResponseEntity<CustomerDTO> fetchAccountDetails(@RequestParam
-                                                           @Pattern(regexp = "(^$|[0-9]{10})", message = "Mobile number must be 10 digits")
-                                                           String mobileNumber) {
-        CustomerDTO customerDTO=iAccountsService.fetchAccount(mobileNumber);
+    public ResponseEntity<CustomerDTO> fetchAccountDetails(
+            @RequestParam(name = "mobileNumber")
+            @Pattern(regexp = "(^$|[0-9]{10})", message = "Mobile number must be 10 digits")
+            String mobileNumber) {
+
+        CustomerDTO customerDTO = iAccountsService.fetchAccount(mobileNumber);
         return ResponseEntity.status(HttpStatus.OK).body(customerDTO);
-   }
+    }
+
     @Operation(
             summary = "Update Account Details REST API",
             description = "REST API to update Customer & Account details based on Mobile number"
