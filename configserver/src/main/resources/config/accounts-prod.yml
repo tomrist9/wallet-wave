@@ -1,0 +1,11 @@
+build:
+  version: "1.0"
+
+accounts:
+  message: "Welcome to Wallet-wave accounts related prod APIs "
+  contactDetails:
+    name: "Max Ray - QA Lead"
+    email: "maxray9@gmail.com"
+  onCallSupport:
+    - (555) 555-5599
+    - (555) 523-5599

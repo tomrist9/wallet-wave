@@ -1,0 +1,27 @@
+dependencies:
+- name: walletwave-common
+  repository: file://../../walletwave-common
+  version: 0.1.0
+- name: configserver
+  repository: file://../../walletwave-services/configserver
+  version: 0.1.0
+- name: eurekaserver
+  repository: file://../../walletwave-services/eurekaserver
+  version: 0.1.0
+- name: accounts
+  repository: file://../../walletwave-services/accounts
+  version: 0.1.0
+- name: cards
+  repository: file://../../walletwave-services/cards
+  version: 0.1.0
+- name: loans
+  repository: file://../../walletwave-services/loans
+  version: 0.1.0
+- name: gatewayserver
+  repository: file://../../walletwave-services/gatewayserver
+  version: 0.1.0
+- name: message
+  repository: file://../../walletwave-services/message
+  version: 0.1.0
+digest: sha256:cf4124b49feaf407a8c17968994d7847ac4a1289705603e3d4de397081ab1bb1
+generated: "2025-04-28T22:28:55.027386+04:00"

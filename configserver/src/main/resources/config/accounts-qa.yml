@@ -1,0 +1,11 @@
+build:
+  version: "2.0"
+
+accounts:
+  message: "Welcome to Wallet-wave accounts related QA APIs "
+  contactDetails:
+    name: "Smith Ray - QA Lead"
+    email: "smithray9@gmail.com"
+  onCallSupport:
+    - (555) 555-5534
+    - (555) 523-5545

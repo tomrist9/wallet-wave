@@ -1,0 +1,6 @@
+dependencies:
+- name: walletwave-common
+  repository: file://../../walletwave-common
+  version: 0.1.0
+digest: sha256:2cc04f7bf4ec84b2520eeffb15899f1e3d57affd93b899ea8656ad2cf5c96a21
+generated: "2025-04-28T23:15:21.203532+04:00"
