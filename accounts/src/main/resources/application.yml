@@ -81,6 +81,8 @@ info:
     name: "accounts"
     description: "Wallet-wave Accounts Application"
     version: "1.0.0"
+build:
+  version: "1.0.0"
 
 logging:
   level:

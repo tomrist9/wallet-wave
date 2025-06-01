@@ -1,8 +1,15 @@
+server:
+  port: 8070
 spring:
   application:
     name: "eurekaserver"
   config:
     import: "optional:configserver:http://localhost:8071/"
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
 
 management:
   endpoints:
