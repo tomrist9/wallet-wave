@@ -59,7 +59,7 @@ This repository demonstrates a **complete banking system** built on microservice
 | **Containerization & Orchestration** | Docker, Docker Compose, Kubernetes (GKE), Helm |
 | **Messaging & Event Streaming** | RabbitMQ, Apache Kafka |
 | **Monitoring & Logging** | Prometheus, Grafana, Loki, Promtail, Tempo |
-| **Security** | OAuth2, OpenID Connect, Spring Security |
+| **Security** | OAuth2, OpenID Connect, Spring Security, Keycloak |
 
 ---
 
