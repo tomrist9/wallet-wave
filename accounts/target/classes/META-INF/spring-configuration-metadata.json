@@ -1,0 +1,27 @@
+{
+  "groups": [
+    {
+      "name": "accounts",
+      "type": "com.walletwave.dto.AccountsContactInfoDto",
+      "sourceType": "com.walletwave.dto.AccountsContactInfoDto"
+    }
+  ],
+  "properties": [
+    {
+      "name": "accounts.contact-details",
+      "type": "java.util.Map<java.lang.String,java.lang.String>",
+      "sourceType": "com.walletwave.dto.AccountsContactInfoDto"
+    },
+    {
+      "name": "accounts.message",
+      "type": "java.lang.String",
+      "sourceType": "com.walletwave.dto.AccountsContactInfoDto"
+    },
+    {
+      "name": "accounts.on-call-support",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "com.walletwave.dto.AccountsContactInfoDto"
+    }
+  ],
+  "hints": []
+}
