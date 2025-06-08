@@ -63,7 +63,7 @@ This repository demonstrates a **complete banking system** built on microservice
 
 ---
 
-## 🛠️ Prerequisites
+##  Prerequisites
 
 Before running this application, ensure you have:
 
