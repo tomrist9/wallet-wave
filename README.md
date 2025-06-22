@@ -12,44 +12,6 @@ This repository demonstrates a **complete banking system** built on microservice
 
 ##  Features Implemented
 
-## 🏦 Architecture Diagram
-
-```mermaid
-flowchart TD
-    A[Frontend Client (UI)] -->|REST API| B(API Gateway <br> Spring Cloud Gateway)
-
-    B --> C1[Accounts Service <br> Spring Boot]
-    B --> C2[Transactions Service <br> Spring Boot]
-    B --> C3[Notifications Service <br> Spring Boot]
-
-    C1 --> D1[(PostgreSQL <br> accounts-db)]
-    C2 --> D2[(PostgreSQL <br> transactions-db)]
-    
-    C3 --> E(RabbitMQ <br> Event-driven)
-
-    C1 -- Kafka Events --> F[Kafka Broker]
-    C2 -- Kafka Events --> F
-    C3 -- Kafka Events --> F
-
-    subgraph Infra Services
-        G[Spring Cloud Config Server]
-        H[Eureka Service Discovery]
-        I[Prometheus / Grafana]
-    end
-
-    C1 --> G
-    C2 --> G
-    C3 --> G
-    
-    C1 --> H
-    C2 --> H
-    C3 --> H
-
-    C1 --> I
-    C2 --> I
-    C3 --> I
-
-
 ### ✅ Microservices Architecture
 - Well-defined **service boundaries** for core banking functionalities.
 - Independent microservices for **account management, transactions, customer service**, etc.
