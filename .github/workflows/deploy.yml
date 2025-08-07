@@ -21,8 +21,10 @@ jobs:
           distribution: 'temurin'
 
       - name: Build with Maven
+        working-directory: ./wallet-bom
         run: mvn clean install -DskipTests
 
+               
       - name: Trigger Render Deployment
         run: |
           curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}
