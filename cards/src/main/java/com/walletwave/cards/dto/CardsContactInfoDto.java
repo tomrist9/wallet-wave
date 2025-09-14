@@ -1,6 +1,7 @@
 package com.walletwave.cards.dto;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
@@ -8,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 @ConfigurationProperties(prefix = "cards")
+@NoArgsConstructor
 public class CardsContactInfoDto {
     private String message;
     private Map<String, String> contactDetails;

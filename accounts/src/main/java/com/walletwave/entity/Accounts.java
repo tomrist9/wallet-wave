@@ -8,7 +8,6 @@ import lombok.*;
 @Entity
 @Getter
 @Setter
-@ToString
 public class Accounts extends BaseEntity {
     @Id
     @Column(name = "account_number")
