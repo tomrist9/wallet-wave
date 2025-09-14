@@ -6,7 +6,9 @@ WORKDIR /build
 COPY . .
 
 # Burada parent pom wallet-bom içindədir deyə -f ilə göstəririk
-RUN mvn -f wallet-bom/pom.xml -pl message -am clean package -DskipTests
+RUN mvn -f wallet-bom/pom.xml clean install -DskipTests
+RUN mvn -pl message -am clean package -DskipTests
+
 
 # Stage 2: Run
 FROM openjdk:17-jdk-slim
