@@ -71,6 +71,9 @@ Before running this application, ensure you have:
 - **Understanding of RESTful APIs**.
 - **Docker and Kubernetes installed**.
 
+[![Deploy on Render](https://img.shields.io/badge/Render-Live-brightgreen?logo=render)](https://wallet-wave.onrender.com)
+
+
 ---
 
 ##  Getting Started
@@ -84,5 +87,4 @@ cd wallet-wave
 
 ```bash
 
-[![Deploy on Render](https://img.shields.io/badge/Render-Live-brightgreen?logo=render)](https://wallet-wave.onrender.com)
 
