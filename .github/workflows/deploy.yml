@@ -7,7 +7,6 @@ on:
 
 jobs:
   build-deploy:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -24,7 +23,6 @@ jobs:
         working-directory: ./wallet-bom
         run: mvn clean install -DskipTests
 
-               
       - name: Trigger Render Deployment
-        run: |
-          curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}
+        run: curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}
+
