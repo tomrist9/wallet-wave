@@ -1,0 +1,7 @@
+spring:
+  data:
+    jpa:
+      auditing:
+        enabled: false
+
+

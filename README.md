@@ -51,6 +51,12 @@ This repository demonstrates a **complete banking system** built on microservice
 
 ---
 
+## 📊 Quality Metrics
+![Build](https://img.shields.io/github/actions/workflow/status/tomrist9/wallet-wave/maven.yml?branch=main)
+![Coverage](https://img.shields.io/badge/Coverage-85%25-brightgreen)
+
+
+
 ## ⚙️ Tools & Technologies
 
 | Category           | Technologies Used |

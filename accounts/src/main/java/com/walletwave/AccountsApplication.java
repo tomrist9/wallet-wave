@@ -17,7 +17,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 /*@ComponentScans({ @ComponentScan("com.walletwave.accounts.controller") })
 @EnableJpaRepositories("com.walletwave.accounts.repository")
 @EntityScan("com.walletwave.accounts.model")*/
-@EnableJpaAuditing(auditorAwareRef = "auditAwareImpl")
 @EnableConfigurationProperties(value = {AccountsContactInfoDto.class})
 @OpenAPIDefinition(
 		info=@Info(
