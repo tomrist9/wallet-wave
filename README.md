@@ -54,6 +54,7 @@ This repository demonstrates a **complete banking system** built on microservice
 ## 📊 Quality Metrics
 ![Build](https://img.shields.io/github/actions/workflow/status/tomrist9/wallet-wave/maven.yml?branch=main)
 ![Coverage](https://img.shields.io/badge/Coverage-85%25-brightgreen)
+[![Deploy on Render](https://img.shields.io/badge/Render-Live-brightgreen?logo=render)](https://wallet-wave.onrender.com)
 
 
 
@@ -77,7 +78,7 @@ Before running this application, ensure you have:
 - **Understanding of RESTful APIs**.
 - **Docker and Kubernetes installed**.
 
-[![Deploy on Render](https://img.shields.io/badge/Render-Live-brightgreen?logo=render)](https://wallet-wave.onrender.com)
+
 
 
 ---
