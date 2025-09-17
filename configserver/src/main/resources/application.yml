@@ -9,7 +9,7 @@ spring:
       server:
         # native:
         # search-locations: "classpath:/config"
-        # search-locations: "file:///Users//eazybytes//Documents//config"
+        # search-locations: "file:///Users//walletwave//Documents//config"
         git:
           uri: "https://github.com/tomrist9/wallet-wave-config.git"
           default-label: main

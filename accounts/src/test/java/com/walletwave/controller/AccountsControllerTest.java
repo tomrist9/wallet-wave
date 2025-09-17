@@ -55,7 +55,7 @@ class AccountsControllerTest {
         MockitoAnnotations.openMocks(this);
         accountsController = new AccountsController(accountsService);
 
-        // Inject required fields
+
         ReflectionTestUtils.setField(accountsController, "environment", environment);
         ReflectionTestUtils.setField(accountsController, "accountsContactInfoDto", contactInfoDto);
         ReflectionTestUtils.setField(accountsController, "buildVersion", "1.0");

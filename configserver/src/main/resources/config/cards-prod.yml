@@ -2,10 +2,10 @@ build:
   version: "1.0"
 
 cards:
-  message: "Welcome to EazyBank cards related prod APIs "
+  message: "Welcome to Wallet-wave cards related prod APIs "
   contactDetails:
     name: "Sandra Harald - Product Owner"
-    email: "sandra@eazybank.com"
+    email: "sandra@wallet-wave.com"
   onCallSupport:
     - (617) 432-2356
     - (936) 564-8721

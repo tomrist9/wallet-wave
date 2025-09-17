@@ -25,13 +25,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-/**
- * @author Eazy Bytes
- */
 
 @Tag(
-        name = "CRUD REST APIs for Cards in EazyBank",
-        description = "CRUD REST APIs in EazyBank to CREATE, UPDATE, FETCH AND DELETE card details"
+        name = "CRUD REST APIs for Cards in Wallet-wave",
+        description = "CRUD REST APIs in Wallet-wave to CREATE, UPDATE, FETCH AND DELETE card details"
 )
 @RestController
 @RequestMapping(path = "/api", produces = {MediaType.APPLICATION_JSON_VALUE})
@@ -57,7 +54,7 @@ public class CardsController {
 
     @Operation(
             summary = "Create Card REST API",
-            description = "REST API to create new Card inside EazyBank"
+            description = "REST API to create new Card inside Wallet-wave"
     )
     @ApiResponses({
             @ApiResponse(
@@ -74,14 +71,16 @@ public class CardsController {
     }
     )
     @PostMapping("/create")
-    public ResponseEntity<ResponseDto> createCard(@Valid @RequestParam
-                                                  @Pattern(regexp="(^$|[0-9]{10})",message = "Mobile number must be 10 digits")
-                                                  String mobileNumber) {
+    public ResponseEntity<ResponseDto> createCard(
+            @Valid @RequestParam(name = "mobileNumber")
+            @Pattern(regexp="(^$|[0-9]{10})", message = "Mobile number must be 10 digits")
+            String mobileNumber) {
         iCardsService.createCard(mobileNumber);
         return ResponseEntity
                 .status(HttpStatus.CREATED)
                 .body(new ResponseDto(CardsConstants.STATUS_201, CardsConstants.MESSAGE_201));
     }
+
 
     @Operation(
             summary = "Fetch Card Details REST API",
@@ -101,15 +100,18 @@ public class CardsController {
             )
     })
     @GetMapping("/fetch")
-    public ResponseEntity<CardsDto> fetchCardDetails(@RequestHeader("walletwave-correlation-id")
-                                                     String correlationId, @RequestParam
-                                                     @Pattern(regexp="(^$|[0-9]{10})",message = "Mobile number must be 10 digits")
-                                                     String mobileNumber) {
+    public ResponseEntity<CardsDto> fetchCardDetails(
+            @RequestHeader(name = "walletwave-correlation-id") String correlationId,
+            @RequestParam(name = "mobileNumber")
+            @Pattern(regexp = "(^$|[0-9]{10})", message = "Mobile number must be 10 digits")
+            String mobileNumber) {
+
         logger.debug("fetchCardDetails method start");
         CardsDto cardsDto = iCardsService.fetchCard(mobileNumber);
         logger.debug("fetchCardDetails method end");
         return ResponseEntity.status(HttpStatus.OK).body(cardsDto);
     }
+
 
     @Operation(
             summary = "Update Card Details REST API",
@@ -168,20 +170,22 @@ public class CardsController {
             )
     })
     @DeleteMapping("/delete")
-    public ResponseEntity<ResponseDto> deleteCardDetails(@RequestParam
-                                                         @Pattern(regexp="(^$|[0-9]{10})",message = "Mobile number must be 10 digits")
-                                                         String mobileNumber) {
+    public ResponseEntity<ResponseDto> deleteCardDetails(
+            @RequestParam(name = "mobileNumber")
+            @Pattern(regexp="(^$|[0-9]{10})", message = "Mobile number must be 10 digits")
+            String mobileNumber) {
         boolean isDeleted = iCardsService.deleteCard(mobileNumber);
-        if(isDeleted) {
+        if (isDeleted) {
             return ResponseEntity
                     .status(HttpStatus.OK)
                     .body(new ResponseDto(CardsConstants.STATUS_200, CardsConstants.MESSAGE_200));
-        }else{
+        } else {
             return ResponseEntity
                     .status(HttpStatus.EXPECTATION_FAILED)
                     .body(new ResponseDto(CardsConstants.STATUS_417, CardsConstants.MESSAGE_417_DELETE));
         }
     }
+
 
     @Operation(
             summary = "Get Build information",
