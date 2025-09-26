@@ -1,5 +1,15 @@
 # Wallet-wave Bank Microservices Platform
 
+![Build](https://img.shields.io/github/actions/workflow/status/USER/wallet-wave/ci.yml?branch=main)
+![Java](https://img.shields.io/badge/Java-21-blue)
+![Deploy](https://img.shields.io/badge/Render-Auto--deploy-brightgreen)
+
+## Screenshots
+- Swagger UI
+- Eureka dashboard
+- Grafana dashboard
+
+
 Wallet-wave is a production-grade banking application built with a **microservices architecture** using **Spring Boot, Docker, and Kubernetes**. It is designed to deliver **secure, scalable, and resilient** core banking operations for modern financial services.
 
 ##  Purpose
