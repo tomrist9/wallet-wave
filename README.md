@@ -17,7 +17,7 @@ It is designed to deliver **secure, scalable, and resilient** core banking opera
 
 ## 🏛️ Architecture
 
-![Architecture Diagram](C:\Users\hp\wallet-wave\screenshots\wallet-wave-architecture.png)
+![Architecture Diagram](screenshots/wallet-wave-architecture.png)
 
 > 💡 **Microservices in Wallet-Wave**
 
