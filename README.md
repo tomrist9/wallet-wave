@@ -19,13 +19,32 @@ It is designed to deliver **secure, scalable, and resilient** core banking opera
 
 ![Architecture Diagram](docs/architecture.png)
 
-- **Gateway** – routes external traffic to services securely
-- **Config Server** – centralized configuration
-- **Eureka Server** – service discovery
-- **Accounts Service** – account management
-- **Loans Service** – loan operations
-- **Message Service** – asynchronous messaging (Kafka / RabbitMQ)
-- **Observability Stack** – Actuator, Prometheus, Grafana, Loki, Tempo
+> 💡 **Microservices in Wallet-Wave**
+
+- 🛡️ **Gateway**  
+  Routes external traffic to services securely
+
+- ⚙️ **Config Server**  
+  Centralized configuration management
+
+- 🔎 **Eureka Server**  
+  Service discovery and registration
+
+- 👤 **Accounts Service**  
+  Account management (create, update, delete, fetch)
+
+- 💳 **Cards Service**  
+  Manage debit/credit cards, card issuance and operations
+
+- 💰 **Loans Service**  
+  Loan operations and management
+
+- ✉️ **Message Service**  
+  Asynchronous messaging (Kafka / RabbitMQ)
+
+- 📈 **Observability Stack**  
+  Actuator, Prometheus, Grafana, Loki, Tempo
+
 
 ---
 
