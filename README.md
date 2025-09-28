@@ -74,16 +74,6 @@ It is designed to deliver **secure, scalable, and resilient** core banking opera
 
 ---
 
-##  Prerequisites
-
-Before running this application, ensure you have:
-
-- **Basic knowledge of Java and Spring framework**.
-- **Understanding of RESTful APIs**.
-- **Docker and Kubernetes installed**.
-
-
-
 
 ---
 
