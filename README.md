@@ -17,7 +17,7 @@ It is designed to deliver **secure, scalable, and resilient** core banking opera
 
 ## 🏛️ Architecture
 
-![Architecture Diagram](docs/architecture.png)
+![Architecture Diagram](screenshots/wallet-wave-architecture.png)
 
 > 💡 **Microservices in Wallet-Wave**
 
@@ -74,16 +74,6 @@ It is designed to deliver **secure, scalable, and resilient** core banking opera
 
 ---
 
-##  Prerequisites
-
-Before running this application, ensure you have:
-
-- **Basic knowledge of Java and Spring framework**.
-- **Understanding of RESTful APIs**.
-- **Docker and Kubernetes installed**.
-
-
-
 
 ---
 
@@ -94,7 +84,6 @@ Before running this application, ensure you have:
 git clone https://github.com/tomrist9/wallet-wave.git
 cd wallet-wave
 
-📄 [My Java Backend Portfolio (PDF)](https://www.canva.com/design/DAGnsTlPI4E/YWJ12yjDBMzhRCY6rslQAQ/view?utm_content=DAGnsTlPI4E&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hc0e2a8c572
 
 ```bash
 
