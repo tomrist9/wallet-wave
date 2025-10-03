@@ -29,6 +29,7 @@ It is designed to deliver **secure, scalable, and resilient** core banking opera
 
 - 🔎 **Eureka Server**  
   Service discovery and registration
+  ![Eureka Server](screenshots/eureka_resized.jpg)
 
 - 👤 **Accounts Service**  
   Account management (create, update, delete, fetch)
@@ -51,12 +52,12 @@ microservices health and performance.
 ### 🔹 Prometheus Targets
 Prometheus collects metrics from each service (`/actuator/prometheus`).
 
-![Prometheus Targets](screenshots/prometheus-targets-up.png)
+![Prometheus Targets](screenshots/prometheus.png)
 
 ### 🔹 Grafana Dashboards
 Real-time visualization of HTTP requests, service health and system performance.
 
-![Grafana Dashboard](screenshots/grafana-http-requests.png)
+![Grafana Dashboard](screenshots/grafana_visualization.png)
 
 
 ---
