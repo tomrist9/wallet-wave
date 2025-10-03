@@ -1,8 +1,36 @@
+server:
+  port: 8072
+
+management:
+  server:
+    port: 8072
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  health:
+    readiness-state:
+      enabled: true
+    liveness-state:
+      enabled: true
+  endpoint:
+    shutdown:
+      access: unrestricted
+    health:
+      probes:
+        enabled: true
+  info:
+    env:
+      enabled: true
+  metrics:
+    tags:
+      application: ${spring.application.name}
+
 spring:
   application:
-    name: "gatewayserver"
+    name: gatewayserver
   config:
-    import: "optional:configserver:http://localhost:8071/"
+    import: optional:configserver:http://configserver-ms:8071/
   cloud:
     gateway:
       discovery:
@@ -12,14 +40,22 @@ spring:
       httpclient:
         connect-timeout: 1000
         response-timeout: 10s
-  data:
-    redis:
-      connect-timeout: 2s
-      host: localhost
-      port: 6379
-      timeout: 1s
   security:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:7080/realms/master
+          issuer-uri: http://keycloak:8080/realms/master
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://localhost:8070/eureka/
+
