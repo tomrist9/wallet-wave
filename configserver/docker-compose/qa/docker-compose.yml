@@ -1,28 +1,28 @@
 services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.5.0
+    ports:
+      - "2181:2181"
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
 
   kafka:
-    image: docker.io/bitnami/kafka:3.9
+    image: confluentinc/cp-kafka:7.5.0
     ports:
       - "9092:9092"
-    volumes:
-      - "kafka_data:/bitnami"
     environment:
-      # KRaft settings
-      - KAFKA_CFG_NODE_ID=0
-      - KAFKA_CFG_PROCESS_ROLES=controller,broker
-      - KAFKA_CFG_CONTROLLER_QUORUM_VOTERS=0@kafka:9093
-      # Listeners
-      - KAFKA_CFG_LISTENERS=PLAINTEXT://:9092,CONTROLLER://:9093
-      - KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://:9092
-      - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT
-      - KAFKA_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER
-      - KAFKA_CFG_INTER_BROKER_LISTENER_NAME=PLAINTEXT
-    extends:
-      file: common-config.yml
-      service: network-deploy-service
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    depends_on:
+      - zookeeper
+
+
   keycloak:
     image: quay.io/keycloak/keycloak:26.0.7
-    container_name: keycloak
+    container_name: keycloak-qa
     ports:
       - "7080:8080"
     environment:
@@ -249,8 +249,8 @@ services:
       service: network-deploy-service
 
   configserver:
-    image: "tomristt/configserver:s12"
-    container_name: configserver-ms
+    image: "tomristt/configserver:s20"
+    container_name: configserver-ms-qa
     ports:
       - "8071:8071"
     healthcheck:
@@ -266,7 +266,7 @@ services:
       OTEL_SERVICE_NAME: "configserver"
 
   eurekaserver:
-    image: "tomristt/eurekaserver:s12"
+    image: "tomristt/eurekaserver:s20"
     container_name: eurekaserver-ms
     ports:
       - "8070:8070"
@@ -287,8 +287,8 @@ services:
       OTEL_SERVICE_NAME: "eurekaserver"
 
   accounts:
-    image: "tomristt/accounts:s12"
-    container_name: accounts-ms
+    image: "tomristt/accounts:s20"
+    container_name: accounts-ms-qa
     depends_on:
       configserver:
         condition: service_healthy
@@ -308,8 +308,8 @@ services:
       service: microservice-eureka-config
 
   loans:
-    image: "tomristt/loans:s12"
-    container_name: loans-ms
+    image: "tomristt/loans:s20"
+    container_name: loans-ms-qa
     depends_on:
       configserver:
         condition: service_healthy
@@ -329,8 +329,8 @@ services:
       service: microservice-eureka-config
 
   cards:
-    image: "tomristt/cards:s12"
-    container_name: cards-ms
+    image: "tomristt/cards:s20"
+    container_name: cards-ms-qa
     depends_on:
       configserver:
         condition: service_healthy
@@ -350,8 +350,8 @@ services:
       service: microservice-eureka-config
 
   gatewayserver:
-    image: "tomristt/gatewayserver:s12"
-    container_name: gatewayserver-ms
+    image: "tomristt/gatewayserver:s20"
+    container_name: gatewayserver-ms-qa
     ports:
       - "8072:8072"
     depends_on:
@@ -372,3 +372,6 @@ services:
 networks:
   wallet-wave:
     driver: "bridge"
+volumes:
+  kafka_data:
+
