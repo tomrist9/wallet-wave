@@ -81,7 +81,7 @@ Real-time visualization of HTTP requests, service health and system performance.
 
 Wallet-Wave is deployed on **Render** with Dockerized microservices.
 
-![Render Deployment](screenshots/render-deployment.png)
+![Render Deployment](screenshots/2025-10-02_23-10-47.png)
 
 ---
 
