@@ -42,8 +42,21 @@ It is designed to deliver **secure, scalable, and resilient** core banking opera
 - ✉️ **Message Service**  
   Asynchronous messaging (Kafka / RabbitMQ)
 
-- 📈 **Observability Stack**  
-  Actuator, Prometheus, Grafana, Loki, Tempo
+
+  ## 📊 Observability & Monitoring
+
+Wallet-Wave uses **Spring Boot Actuator**, **Prometheus**, and **Grafana** to provide real-time insight into
+microservices health and performance.
+
+### 🔹 Prometheus Targets
+Prometheus collects metrics from each service (`/actuator/prometheus`).
+
+![Prometheus Targets](screenshots/prometheus-targets-up.png)
+
+### 🔹 Grafana Dashboards
+Real-time visualization of HTTP requests, service health and system performance.
+
+![Grafana Dashboard](screenshots/grafana-http-requests.png)
 
 
 ---
@@ -64,13 +77,10 @@ It is designed to deliver **secure, scalable, and resilient** core banking opera
 
 ## 🌐 Deployment (Render)
 
-| Service           | URL                                                                 |
-|-------------------|---------------------------------------------------------------------|
-| Gateway           | https://wallet-wave.onrender.com                                    |
-| Accounts API      | https://wallet-wave.onrender.com/accounts/swagger-ui.html           |
-| Loans API         | https://wallet-wave.onrender.com/loans/swagger-ui.html              |
-| Eureka Dashboard  | https://wallet-wave.onrender.com/eureka                             |
-| Actuator Health   | https://wallet-wave.onrender.com/actuator/health                    |
+
+Wallet-Wave is deployed on **Render** with Dockerized microservices.
+
+![Render Deployment](screenshots/render-deployment.png)
 
 ---
 
