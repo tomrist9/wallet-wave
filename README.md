@@ -70,7 +70,8 @@ Real-time visualization of HTTP requests, service health and system performance.
 - ✅ **Event-Driven Architecture** – RabbitMQ, Kafka, Spring Cloud Stream  
 - ✅ **Resilience & Fault Tolerance** – Resilience4J  
 - ✅ **Observability & Monitoring** – Prometheus, Grafana, Loki, Promtail, Tempo  
-- ✅ **Security & Authentication** – Spring Security, OAuth2 / OIDC, Keycloak  
+- ✅ **Security & Authentication** – Spring Security, OAuth2 / OIDC, Keycloak
+- ![Keycloak](screenshots/keycloak_resized.jpg)
 - ✅ **Containerization & Orchestration** – Docker, Kubernetes (Helm charts)  
 - ✅ **API Documentation** – Swagger / OpenAPI  
 
@@ -82,6 +83,7 @@ Real-time visualization of HTTP requests, service health and system performance.
 Wallet-Wave is deployed on **Render** with Dockerized microservices.
 
 ![Render Deployment](screenshots/2025-10-02_23-10-47.png)
+https://wallet-wave.onrender.com
 
 ---
 
