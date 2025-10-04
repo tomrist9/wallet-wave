@@ -27,24 +27,24 @@ It is designed to deliver **secure, scalable, and resilient** core banking opera
 - ⚙️ **Config Server**  
   Centralized configuration management
 
-- 🔎 **Eureka Server**  
+-  **Eureka Server**  
   Service discovery and registration
   ![Eureka Server](screenshots/eureka_resized.jpg)
 
-- 👤 **Accounts Service**  
+-  **Accounts Service**  
   Account management (create, update, delete, fetch)
 
-- 💳 **Cards Service**  
+-  **Cards Service**  
   Manage debit/credit cards, card issuance and operations
 
-- 💰 **Loans Service**  
+-  **Loans Service**  
   Loan operations and management
 
-- ✉️ **Message Service**  
+-  **Message Service**  
   Asynchronous messaging (Kafka / RabbitMQ)
 
 
-  ## 📊 Observability & Monitoring
+  ##  Observability & Monitoring
 
 Wallet-Wave uses **Spring Boot Actuator**, **Prometheus**, and **Grafana** to provide real-time insight into
 microservices health and performance.
