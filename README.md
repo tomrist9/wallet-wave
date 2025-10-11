@@ -1,4 +1,4 @@
-# 💳 Wallet-Wave – Bank Microservices Platform
+#  Wallet-Wave – Bank Microservices Platform
 
 ![Build](https://img.shields.io/github/actions/workflow/status/tomrist9/wallet-wave/ci.yml?branch=main)
 ![Java](https://img.shields.io/badge/Java-17%2B-blue)
