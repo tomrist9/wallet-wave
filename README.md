@@ -62,7 +62,7 @@ Real-time visualization of HTTP requests, service health and system performance.
 
 ---
 
-## ✨ Features
+##  Features
 
 - ✅ **Microservices Architecture** – clearly defined service boundaries  
 - ✅ **Spring Boot & Spring Cloud** – production-ready services  
