@@ -7,7 +7,7 @@
 
 ---
 
-## 🏦 Overview
+##  Overview
 
 Wallet-Wave is a **production-grade banking application** built with a **microservices architecture** using  
 Java, Spring Boot, Docker, and Kubernetes.  
