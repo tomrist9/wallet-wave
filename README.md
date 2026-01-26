@@ -15,7 +15,7 @@ It is designed to deliver **secure, scalable, and resilient** core banking opera
 
 ---
 
-## 🏛️ Architecture
+##  Architecture
 
 ![Architecture Diagram](screenshots/wallet-wave-architecture.png)
 
