@@ -19,7 +19,7 @@ It is designed to deliver **secure, scalable, and resilient** core banking opera
 
 ![Architecture Diagram](screenshots/wallet-wave-architecture.png)
 
-> 💡 **Microservices in Wallet-Wave**
+>  **Microservices in Wallet-Wave**
 
 - 🛡️ **Gateway**  
   Routes external traffic to services securely
