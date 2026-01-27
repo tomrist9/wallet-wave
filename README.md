@@ -27,9 +27,19 @@ It is designed to deliver **secure, scalable, and resilient** core banking opera
 - ⚙️ **Config Server**  
   Centralized configuration management
 
--  **Eureka Server**  
-  Service discovery and registration
+  
+
+- **Eureka Server**  
+  Service discovery and registration  
   ![Eureka Server](screenshots/eureka_resized.jpg)
+
+- 🌐 **Service Discovery (Kubernetes Native)**  
+  Kubernetes-based service discovery using built-in DNS and Services.  
+  This approach replaces Eureka in cloud-native production deployments  
+  and provides scalable, resilient inter-service communication.
+
+  🔗 Repo: https://github.com/tomrist9/wallet-wave-service-discovery
+
 
 -  **Accounts Service**  
   Account management (create, update, delete, fetch)
