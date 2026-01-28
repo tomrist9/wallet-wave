@@ -33,7 +33,7 @@ It is designed to deliver **secure, scalable, and resilient** core banking opera
   Service discovery and registration  
   ![Eureka Server](screenshots/eureka_resized.jpg)
 
-- 🌐 **Service Discovery (Kubernetes Native)**  
+-  **Service Discovery (Kubernetes Native)**  
   Kubernetes-based service discovery using built-in DNS and Services.  
   This approach replaces Eureka in cloud-native production deployments  
   and provides scalable, resilient inter-service communication.
