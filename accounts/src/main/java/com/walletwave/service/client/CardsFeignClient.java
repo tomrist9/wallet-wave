@@ -13,6 +13,6 @@ public interface CardsFeignClient {
     @GetMapping(value = "/api/fetch", consumes = "application/json")
     ResponseEntity<CardsDto> fetchCardDetails(
             @RequestHeader("walletwave-correlation-id") String correlationId,
-            @RequestParam("mobileNumber") String mobileNumber // ✅ Add parameter name
+            @RequestParam("mobileNumber") String mobileNumber
     );
 }
