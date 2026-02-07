@@ -15,6 +15,10 @@ It is designed to deliver **secure, scalable, and resilient** core banking opera
 
 ---
 
+##  Application Demo
+
+![Wallet Wave Login Demo](screenshots/login-demo.gif)
+
 ##  Architecture
 
 ![Architecture Diagram](screenshots/wallet-wave-architecture.png)
