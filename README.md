@@ -3,7 +3,8 @@
 ![Build](https://img.shields.io/github/actions/workflow/status/tomrist9/wallet-wave/ci.yml?branch=main)
 ![Java](https://img.shields.io/badge/Java-17%2B-blue)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3-green)
-![Deploy](https://img.shields.io/badge/Render-Deployed-success)
+![Wallet-Wave CI/CD](https://github.com/tomrist9/wallet-wave/actions/workflows/deploy.yml/badge.svg?branch=main)
+
 
 ---
 
