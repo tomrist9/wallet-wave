@@ -26,7 +26,7 @@ It is designed to deliver **secure, scalable, and resilient** core banking opera
 
 >  **Microservices in Wallet-Wave**
 
-- 🛡️ **Gateway**  
+-  **Gateway**  
   Routes external traffic to services securely
 
 - ⚙️ **Config Server**  
