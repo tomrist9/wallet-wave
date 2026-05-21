@@ -10,7 +10,7 @@ RUN mvn -pl message -am clean package -DskipTests
 
 
 
-FROM openjdk:17-jdk-slim
+FROM eclipse-temurin:17-jre
 WORKDIR /app
 COPY --from=build /build/message/target/message-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 9010

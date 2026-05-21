@@ -6,7 +6,7 @@ spring:
     name: "message"
 
   kafka:
-    bootstrap-servers: localhost:9092
+    bootstrap-servers: localhost:19092,localhost:29092,localhost:39092
     consumer:
       group-id: wallet-wave-message-service
       auto-offset-reset: earliest
@@ -29,9 +29,11 @@ spring:
       kafka:
         binder:
           brokers:
-            - localhost:9092
+            - localhost:19092
+            - localhost:29092
+            - localhost:39092
 
 wallet-wave:
   kafka:
     topics:
-      transaction: transaction-topic            -
+      transaction: transaction-topic       -

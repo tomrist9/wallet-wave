@@ -22,16 +22,16 @@ public class TransactionEventConsumer {
 
     private final ObjectMapper objectMapper;
 
-    @RetryableTopic(
-            attempts = "3",
-            backoff = @Backoff(delay = 2000, multiplier = 2.0),
-            retryTopicSuffix = "-retry",
-            dltTopicSuffix = "-dlt",
-            autoCreateTopics = "true"
-    )
+     @RetryableTopic(
+         attempts = "4",
+         backoff = @Backoff(delay = 2000, multiplier = 2.0),
+         retryTopicSuffix = "-retry",
+         dltTopicSuffix = "-dlt",
+         autoCreateTopics = "true"
+ )
     @KafkaListener(
-            topics = "${wallet-wave.kafka.topics.transaction}",
-            groupId = "${spring.kafka.consumer.group-id}"
+            topics = "transaction-topic",
+            groupId = "wallet-wave-transaction-consumer-test"
     )
     public void consume(
             String message,
