@@ -4,6 +4,18 @@ server:
 spring:
   application:
     name: "message"
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: wallet-wave-message-service
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
   cloud:
     function:
       definition: email|sms
@@ -18,3 +30,8 @@ spring:
         binder:
           brokers:
             - localhost:9092
+
+wallet-wave:
+  kafka:
+    topics:
+      transaction: transaction-topic            -
