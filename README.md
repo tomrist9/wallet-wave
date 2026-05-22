@@ -86,22 +86,20 @@ token generation, and role-based access control.
 - Secured microservices through Spring Security
 - API Gateway integration for protected routes
 - Role-based access control for banking operations
+- 
+### Keycloak Setup
+
+The project uses a dedicated Keycloak realm and client configuration for securing backend services.
+
+![Keycloak Configuration](screenshots/keycloak_resized.jpg)
 
 ### Login Flow Demo
 
 The application demonstrates a real authentication flow where users log in through Keycloak,
 receive an access token, and access protected backend APIs securely.
 
-![Keycloak Login Demo](screenshots/keycloak_resized.jpg)
+![Wallet Wave Login Demo](screenshots/login-demo.gif)
 
-## Live Demo
-
-Wallet-Wave is deployed on Render using Dockerized microservices.
-
-Live URL: https://wallet-wave.onrender.com
-
-> Note: The demo environment is intended to showcase the backend architecture,
-> service communication, authentication flow, and deployment setup.
 ---
 
 ##  Features
@@ -113,7 +111,6 @@ Live URL: https://wallet-wave.onrender.com
 - ✅ **Resilience & Fault Tolerance** – Resilience4J  
 - ✅ **Observability & Monitoring** – Prometheus, Grafana, Loki, Promtail, Tempo  
 - ✅ **Security & Authentication** – Spring Security, OAuth2 / OIDC, Keycloak
-- ![Keycloak](screenshots/keycloak_resized.jpg)
 - ✅ **Containerization & Orchestration** – Docker, Kubernetes (Helm charts)  
 - ✅ **API Documentation** – Swagger / OpenAPI  
 
