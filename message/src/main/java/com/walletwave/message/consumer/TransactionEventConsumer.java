@@ -22,16 +22,16 @@ public class TransactionEventConsumer {
 
     private final ObjectMapper objectMapper;
 
-     @RetryableTopic(
-         attempts = "4",
-         backoff = @Backoff(delay = 2000, multiplier = 2.0),
-         retryTopicSuffix = "-retry",
-         dltTopicSuffix = "-dlt",
-         autoCreateTopics = "true"
- )
+    @RetryableTopic(
+            attempts = "4",
+            backoff = @Backoff(delay = 2000, multiplier = 2.0),
+            retryTopicSuffix = "-retry",
+            dltTopicSuffix = "-dlt",
+            autoCreateTopics = "true"
+    )
     @KafkaListener(
             topics = "transaction-topic",
-            groupId = "wallet-wave-transaction-consumer-test"
+            groupId = "wallet-wave-transaction-consumer"
     )
     public void consume(
             String message,
@@ -48,6 +48,17 @@ public class TransactionEventConsumer {
         log.info("Transaction event processed successfully. transactionId={}", event.id());
     }
 
+    @DltHandler
+    public void handleDlt(
+            String message,
+            @Header(KafkaHeaders.RECEIVED_TOPIC) String topic,
+            @Headers MessageHeaders headers
+    ) {
+        log.error("Message moved to DLT. topic={}, payload={}", topic, message);
+        log.error("DLT headers={}", headers);
+    }
+
+
     private void validate(TransactionCreatedEvent event) {
         if (event.id() == null || event.id().isBlank()) {
             throw new IllegalArgumentException("Transaction id cannot be empty");
@@ -62,13 +73,4 @@ public class TransactionEventConsumer {
         }
     }
 
-    @DltHandler
-    public void handleDlt(
-            String message,
-            @Header(KafkaHeaders.RECEIVED_TOPIC) String topic,
-            @Headers MessageHeaders headers
-    ) {
-        log.error("Message moved to DLT. topic={}, payload={}", topic, message);
-        log.error("DLT headers={}", headers);
-    }
 }
