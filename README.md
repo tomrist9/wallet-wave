@@ -113,7 +113,7 @@ This prevents one corrupted message from stopping the processing of valid transa
 
 ### Kafka Retry + DLT Flow
 
-![Kafka Retry and DLT Flow](screenshots/kafka-dlt-flow.png)
+![Kafka Retry and DLT Flow](screenshots/kafkadltflow.png)
 
 ### What this flow demonstrates
 
