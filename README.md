@@ -16,9 +16,6 @@ It is designed to deliver **secure, scalable, and resilient** core banking opera
 
 ---
 
-##  Application Demo
-
-![Wallet Wave Login Demo](screenshots/login-demo.gif)
 
 ##  Architecture
 
@@ -31,8 +28,7 @@ It is designed to deliver **secure, scalable, and resilient** core banking opera
 
 - ⚙️ **Config Server**  
   Centralized configuration management
-
-  
+ 
 
 - **Eureka Server**  
   Service discovery and registration  
@@ -74,8 +70,59 @@ Real-time visualization of HTTP requests, service health and system performance.
 
 ![Grafana Dashboard](screenshots/grafana_visualization.png)
 
+## Security & Authentication
+
+Wallet-Wave includes a secure authentication and authorization flow using  
+**Spring Security, OAuth2, OpenID Connect (OIDC), and Keycloak**.
+
+The system uses Keycloak as an Identity Provider to manage user authentication,
+token generation, and role-based access control.
+
+### Key Security Features
+
+- OAuth2 / OIDC based authentication
+- JWT-based access token validation
+- Centralized identity management with Keycloak
+- Secured microservices through Spring Security
+- API Gateway integration for protected routes
+- Role-based access control for banking operations
+- 
+### Keycloak Setup
+
+The project uses a dedicated Keycloak realm and client configuration for securing backend services.
+
+![Keycloak Configuration](screenshots/keycloak_resized.jpg)
+
+### Login Flow Demo
+
+The application demonstrates a real authentication flow where users log in through Keycloak,
+receive an access token, and access protected backend APIs securely.
+
+![Wallet Wave Login Demo](screenshots/login-demo.gif)
 
 ---
+
+## Event-Driven Architecture: Kafka Retry & DLT Flow
+
+Wallet-Wave uses Kafka-based asynchronous communication for transaction-related events.
+
+To handle failed or malformed messages safely, I implemented a retry mechanism with a Dead Letter Topic (DLT).  
+If a message cannot be processed after the configured retry attempts, it is routed to `transaction-dlt` instead of blocking the main consumer flow.
+
+This prevents one corrupted message from stopping the processing of valid transaction messages.
+
+### Kafka Retry + DLT Flow
+
+![Kafka Retry and DLT Flow](screenshots/kafka-dlt-flow.png)
+
+### What this flow demonstrates
+
+- The producer publishes transaction events to `transaction-topic`
+- The consumer processes messages from the main topic
+- Failed messages are retried with backoff configuration
+- After retries are exhausted, the failed message is routed to `transaction-dlt`
+- The main consumer continues processing valid messages
+- Failed messages can be reviewed later for debugging or alerting
 
 ##  Features
 
@@ -86,7 +133,6 @@ Real-time visualization of HTTP requests, service health and system performance.
 - ✅ **Resilience & Fault Tolerance** – Resilience4J  
 - ✅ **Observability & Monitoring** – Prometheus, Grafana, Loki, Promtail, Tempo  
 - ✅ **Security & Authentication** – Spring Security, OAuth2 / OIDC, Keycloak
-- ![Keycloak](screenshots/keycloak_resized.jpg)
 - ✅ **Containerization & Orchestration** – Docker, Kubernetes (Helm charts)  
 - ✅ **API Documentation** – Swagger / OpenAPI  
 
