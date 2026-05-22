@@ -16,9 +16,6 @@ It is designed to deliver **secure, scalable, and resilient** core banking opera
 
 ---
 
-##  Application Demo
-
-![Wallet Wave Login Demo](screenshots/login-demo.gif)
 
 ##  Architecture
 
@@ -31,8 +28,7 @@ It is designed to deliver **secure, scalable, and resilient** core banking opera
 
 - ⚙️ **Config Server**  
   Centralized configuration management
-
-  
+ 
 
 - **Eureka Server**  
   Service discovery and registration  
@@ -74,7 +70,29 @@ Real-time visualization of HTTP requests, service health and system performance.
 
 ![Grafana Dashboard](screenshots/grafana_visualization.png)
 
+## Security & Authentication
 
+Wallet-Wave includes a secure authentication and authorization flow using  
+**Spring Security, OAuth2, OpenID Connect (OIDC), and Keycloak**.
+
+The system uses Keycloak as an Identity Provider to manage user authentication,
+token generation, and role-based access control.
+
+### Key Security Features
+
+- OAuth2 / OIDC based authentication
+- JWT-based access token validation
+- Centralized identity management with Keycloak
+- Secured microservices through Spring Security
+- API Gateway integration for protected routes
+- Role-based access control for banking operations
+
+### Login Flow Demo
+
+The application demonstrates a real authentication flow where users log in through Keycloak,
+receive an access token, and access protected backend APIs securely.
+
+![Keycloak Login Demo](screenshots/keycloak_resized.jpg)
 ---
 
 ##  Features
