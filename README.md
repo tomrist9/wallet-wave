@@ -93,6 +93,15 @@ The application demonstrates a real authentication flow where users log in throu
 receive an access token, and access protected backend APIs securely.
 
 ![Keycloak Login Demo](screenshots/keycloak_resized.jpg)
+
+## Live Demo
+
+Wallet-Wave is deployed on Render using Dockerized microservices.
+
+Live URL: https://wallet-wave.onrender.com
+
+> Note: The demo environment is intended to showcase the backend architecture,
+> service communication, authentication flow, and deployment setup.
 ---
 
 ##  Features
