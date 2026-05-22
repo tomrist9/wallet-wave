@@ -102,6 +102,28 @@ receive an access token, and access protected backend APIs securely.
 
 ---
 
+## Event-Driven Architecture: Kafka Retry & DLT Flow
+
+Wallet-Wave uses Kafka-based asynchronous communication for transaction-related events.
+
+To handle failed or malformed messages safely, I implemented a retry mechanism with a Dead Letter Topic (DLT).  
+If a message cannot be processed after the configured retry attempts, it is routed to `transaction-dlt` instead of blocking the main consumer flow.
+
+This prevents one corrupted message from stopping the processing of valid transaction messages.
+
+### Kafka Retry + DLT Flow
+
+![Kafka Retry and DLT Flow](screenshots/kafka-dlt-flow.png)
+
+### What this flow demonstrates
+
+- The producer publishes transaction events to `transaction-topic`
+- The consumer processes messages from the main topic
+- Failed messages are retried with backoff configuration
+- After retries are exhausted, the failed message is routed to `transaction-dlt`
+- The main consumer continues processing valid messages
+- Failed messages can be reviewed later for debugging or alerting
+
 ##  Features
 
 - ✅ **Microservices Architecture** – clearly defined service boundaries  
